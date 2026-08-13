@@ -6,5 +6,43 @@
     "contact": "Contacto",
     "cv": "CV",
     "download_cv": "Descargar CV"
+  },
+  "personalInfo": {
+    "name": "Richard Rivera",
+    "title": "Ingeniero de sistemas y desarrollador Full Stack",
+    "roles": [
+      "Ingeniero de sistemas",
+      "Desarrollador de pila completa",
+      "Profesor universitario",
+      "Investigador"
+    ],
+    "tagline": "Desarrollar soluciones tecnológicas que generen un impacto real.",
+    "about": {
+      "bio": "Ingeniero de sistemas y desarrollador Full Stack dedicado a arquitecturar software confiable, llevar a cabo investigación científica y capacitar a la próxima generación de ingenieros. Con un entusiasmo por la rigurosidad académica y la eficiencia en el mundo real, soy capaz de cerrar la brecha entre el diseño de sistemas complejos y las experiencias web intuitivas.",
+      "philosophy": "Creo en construir software que sea mantenible, robusto y accesible. Ya sea diseñando bases de datos o dando clases sobre algoritmos, mi enfoque siempre es resolver problemas estructurales en lugar de aplicar soluciones superficiales.",
+      "highlights": [
+        {
+          "title": "Resolución de Problemas",
+          "description": "Desmontando problemas computacionales complejos y diseñando algoritmos eficientes con una arquitectura estructural limpia.",
+          "color": "from-blue-500 to-indigo-500"
+        },
+        {
+          "title": "Pasión por la Tecnología",
+          "description": "Explorando, aprendiendo y adoptando pilas de tecnología de vanguardia para implementar soluciones robustas y modernas.",
+          "color": "from-indigo-500 to-purple-500"
+        },
+        {
+          "title": "Mentalidad de Innovación",
+          "description": "Conectando la teoría académica, los métodos ingenieriles modernos y las perspectivas de investigación para construir aplicaciones de alto impacto.",
+          "color": "from-purple-500 to-pink-500"
+        }
+      ]
+    },
+    "socials": {
+      "email": "rojasrichard2508@gmail.com",
+      "github": "https://github.com/RichardRivRoj",
+      "linkedin": "https://linkedin.com/in/richard-rafael-rivera-rojas-a4b89b315",
+      "cvUrl": "https://drive.google.com/file/d/1r08ic_V5jnK7Q8IzVumyCOOj_gna4AF0/view?usp=sharing"
+    }
   }
 }

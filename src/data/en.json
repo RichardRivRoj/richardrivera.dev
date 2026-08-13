@@ -6,5 +6,43 @@
     "contact": "Contact",
     "cv": "CV",
     "download_cv": "Download CV"
+  },
+  "personalInfo": {
+    "name": "Richard Rivera",
+    "title": "Systems Engineer & Full Stack Developer",
+    "roles": [
+      "Systems Engineer",
+      "Full Stack Developer",
+      "University Professor",
+      "Researcher"
+    ],
+    "tagline": "Building technology solutions that create real impact.",
+    "about": {
+      "bio": "Systems Engineer and Full Stack Developer dedicated to architecting reliable software, conducting scientific research, and training the next generation of engineers. With a passion for academic rigor and real-world efficiency, I bridge the gap between complex system design and intuitive web experiences.",
+      "philosophy": "I believe in building software that is maintainable, robust, and accessible. Whether designing databases or lecturing on algorithms, my focus is always on solving structural problems rather than applying superficial fixes.",
+      "highlights": [
+        {
+          "title": "Problem Solving",
+          "description": "Deconstructing complex computational problems and designing efficient algorithms with clean structural architecture.",
+          "color": "from-blue-500 to-indigo-500"
+        },
+        {
+          "title": "Technology Passion",
+          "description": "Continuously exploring, learning, and adopting state-of-the-art tech stacks to implement robust and modern solutions.",
+          "color": "from-indigo-500 to-purple-500"
+        },
+        {
+          "title": "Innovation Mindset",
+          "description": "Bridging academic theory, modern engineering methodologies, and research insights to build high-impact applications.",
+          "color": "from-purple-500 to-pink-500"
+        }
+      ]
+    },
+    "socials": {
+      "email": "rojasrichard2508@gmail.com",
+      "github": "https://github.com/RichardRivRoj",
+      "linkedin": "https://linkedin.com/in/richard-rafael-rivera-rojas-a4b89b315",
+      "cvUrl": "https://drive.google.com/file/d/1r08ic_V5jnK7Q8IzVumyCOOj_gna4AF0/view?usp=sharing"
+    }
   }
 }
