@@ -1,0 +1,10 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "about": "Sobre mí",
+    "contact": "Contacto",
+    "cv": "CV",
+    "download_cv": "Descargar CV"
+  }
+}

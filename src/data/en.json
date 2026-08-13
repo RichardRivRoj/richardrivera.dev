@@ -1,0 +1,10 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact",
+    "cv": "CV",
+    "download_cv": "Download CV"
+  }
+}
