@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useTheme } from "./ThemeProvider";
+import { useTheme } from "@/components/ThemeProvider";
 import { useTranslation } from "@/hooks/useTranslation";
 import { Menu, X, Sun, Moon, Download, Globe } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
@@ -125,7 +125,7 @@ export default function Navbar() {
 
           {/* CV - Traducido */}
           <a
-            href="https://drive.google.com/file/d/1r08ic_V5jnK7Q8IzVumyCOOj_gna4AF0/view?usp=sharing"
+            href={t("personalInfo.socials.cvUrl")}
             download
             className="rounded-custom-sm flex items-center gap-2 bg-slate-900 px-5 py-2.5 text-xs font-semibold text-white shadow-sm transition-all duration-200 hover:bg-slate-800 dark:bg-blue-600 dark:hover:bg-blue-500"
           >
@@ -187,7 +187,7 @@ export default function Navbar() {
               </Link>
             ))}
             <a
-              href="https://drive.google.com/file/d/1r08ic_V5jnK7Q8IzVumyCOOj_gna4AF0/view?usp=sharing"
+              href={t("personalInfo.socials.cvUrl")}
               download
               className="rounded-custom-sm mt-2 flex w-full items-center justify-center gap-2 bg-slate-900 py-3 font-semibold text-white transition-colors hover:bg-slate-800 dark:bg-blue-600 dark:hover:bg-blue-500"
             >

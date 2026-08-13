@@ -1,57 +1,147 @@
-'use client';
+"use client";
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
-import en from '@/data/en.json';
-import es from '@/data/es.json';
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
-type Locale = 'en' | 'es';
+import en from "@/data/en.json";
+import es from "@/data/es.json";
+
+type Locale = "en" | "es";
+
 type Translations = typeof en;
 
 interface LanguageContextType {
   locale: Locale;
   toggleLanguage: () => void;
-  t: (key: string) => string;
+  t: <T = string>(key: string) => T;
 }
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+const LanguageContext = createContext<
+  LanguageContextType | undefined
+>(undefined);
 
-// Función para obtener un valor anidado del objeto JSON (ej: "nav.home")
-const getNestedValue = (obj: any, path: string): string => {
-  return path.split('.').reduce((current, key) => current?.[key], obj) || path;
+/**
+ * Obtiene un valor anidado dentro del objeto de traducciones.
+ *
+ * Ejemplos:
+ *
+ * t("nav.home")
+ * t("personalInfo.name")
+ * t("personalInfo.socials.cvUrl")
+ * t<string[]>("personalInfo.roles")
+ */
+const getNestedValue = (
+  obj: unknown,
+  path: string,
+): unknown => {
+  return path.split(".").reduce((current: unknown, key: string) => {
+    if (
+      current !== null &&
+      typeof current === "object" &&
+      key in current
+    ) {
+      return (current as Record<string, unknown>)[key];
+    }
+
+    return undefined;
+  }, obj);
 };
 
-export const LanguageProvider = ({ children }: { children: React.ReactNode }) => {
-  const [locale, setLocale] = useState<Locale>('en');
-  const translations: Record<Locale, Translations> = { en, es };
+export const LanguageProvider = ({
+  children,
+}: {
+  children: React.ReactNode;
+}) => {
+  const [locale, setLocale] = useState<Locale>("en");
 
-  // Cargar idioma guardado en localStorage al iniciar
+  const translations: Record<Locale, Translations> = {
+    en,
+    es,
+  };
+
+  /**
+   * Carga el idioma almacenado o detecta
+   * el idioma del navegador.
+   */
   useEffect(() => {
-    const saved = localStorage.getItem('portfolio-locale') as Locale;
-    if (saved && (saved === 'en' || saved === 'es')) {
-      setLocale(saved);
-    } else {
-      // Detectar idioma del navegador
-      const browserLang = navigator.language.split('-')[0];
-      if (browserLang === 'es') setLocale('es');
+    const savedLocale =
+      localStorage.getItem("portfolio-locale");
+
+    if (
+      savedLocale === "en" ||
+      savedLocale === "es"
+    ) {
+      setLocale(savedLocale);
+      return;
+    }
+
+    const browserLanguage =
+      navigator.language.split("-")[0];
+
+    if (browserLanguage === "es") {
+      setLocale("es");
     }
   }, []);
 
-  // Guardar en localStorage cuando cambie
+  /**
+   * Guarda el idioma seleccionado.
+   */
   useEffect(() => {
-    localStorage.setItem('portfolio-locale', locale);
+    localStorage.setItem(
+      "portfolio-locale",
+      locale,
+    );
   }, [locale]);
 
+  /**
+   * Alterna entre inglés y español.
+   */
   const toggleLanguage = () => {
-    setLocale(prev => (prev === 'en' ? 'es' : 'en'));
+    setLocale((currentLocale) =>
+      currentLocale === "en" ? "es" : "en",
+    );
   };
 
-  // Función de traducción
-  const t = (key: string): string => {
-    return getNestedValue(translations[locale], key);
+  /**
+   * Función principal de traducción.
+   *
+   * Por defecto devuelve un string:
+ *
+   * t("nav.home")
+ *
+   * Para arrays u objetos:
+ *
+   * t<string[]>("personalInfo.roles")
+   */
+  const t = <T = string>(key: string): T => {
+    const value = getNestedValue(
+      translations[locale],
+      key,
+    );
+
+    if (value === undefined || value === null) {
+      console.warn(
+        `[i18n] Translation key not found: "${key}"`,
+      );
+
+      return key as T;
+    }
+
+    return value as T;
   };
 
   return (
-    <LanguageContext.Provider value={{ locale, toggleLanguage, t }}>
+    <LanguageContext.Provider
+      value={{
+        locale,
+        toggleLanguage,
+        t,
+      }}
+    >
       {children}
     </LanguageContext.Provider>
   );
@@ -59,6 +149,12 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
 
 export const useLanguage = () => {
   const context = useContext(LanguageContext);
-  if (!context) throw new Error('useLanguage must be used within LanguageProvider');
+
+  if (!context) {
+    throw new Error(
+      "useLanguage must be used within LanguageProvider",
+    );
+  }
+
   return context;
 };
