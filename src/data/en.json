@@ -7,16 +7,21 @@
     "cv": "CV",
     "download_cv": "Download CV"
   },
+  "hero": {
+    "available": "Available for new projects",
+    "view_projects": "View Projects",
+    "contact": "Contact Me"
+  },
   "personalInfo": {
     "name": "Richard Rivera",
     "title": "Systems Engineer & Full Stack Developer",
     "roles": [
       "Systems Engineer",
       "Full Stack Developer",
-      "University Professor",
-      "Researcher"
+      "University Professor"
     ],
     "tagline": "Building technology solutions that create real impact.",
+    "description": "I am a Systems Engineer and Full Stack Developer dedicated to architecting reliable software, conducting scientific research, and training the next generation of engineers. With a passion for academic rigor and real-world efficiency, I bridge the gap between complex system design and intuitive web experiences.",
     "about": {
       "bio": "Systems Engineer and Full Stack Developer dedicated to architecting reliable software, conducting scientific research, and training the next generation of engineers. With a passion for academic rigor and real-world efficiency, I bridge the gap between complex system design and intuitive web experiences.",
       "philosophy": "I believe in building software that is maintainable, robust, and accessible. Whether designing databases or lecturing on algorithms, my focus is always on solving structural problems rather than applying superficial fixes.",
