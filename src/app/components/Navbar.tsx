@@ -46,6 +46,8 @@ export default function Navbar() {
   const navLinks: NavLink[] = [
     { label: "nav.home", href: pathname === "/" ? "#home" : "/#home", isAnchor: true },
     { label: "nav.about", href: pathname === "/" ? "#about" : "/#about", isAnchor: true },
+    { label: "nav.technology", href: pathname === "/" ? "#technology" : "/#technology", isAnchor: true },
+    { label: "nav.experience", href: pathname === "/" ? "#experience" : "/#experience", isAnchor: true },
     { label: "nav.projects", href: pathname === "/" ? "#projects" : "/#projects", isAnchor: true },
     { label: "nav.contact", href: pathname === "/" ? "#contact" : "/#contact", isAnchor: true },
   ];

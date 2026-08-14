@@ -3,6 +3,8 @@
     "home": "Inicio",
     "projects": "Proyectos",
     "about": "Sobre mí",
+    "technology": "Tecnología",
+    "experience": "Experiencia",
     "contact": "Contacto",
     "cv": "CV",
     "download_cv": "Descargar CV"
@@ -12,18 +14,11 @@
     "view_projects": "Ver proyectos",
     "contact": "Contáctame"
   },
-  "personalInfo": {
-    "name": "Richard Rivera",
-    "title": "Ingeniero de Sistemas y Desarrollador Full Stack",
-    "roles": [
-      "Ingeniero de Sistemas",
-      "Desarrollador Full Stack",
-      "Profesor Universitario"
-    ],
-    "tagline": "Construyendo soluciones tecnológicas que generan un impacto real.",
-     "description": "Soy un Ingeniero de Sistemas y Desarrollador Full Stack dedicado a diseñar software confiable, realizar investigación científica y formar a la próxima generación de ingenieros. Con pasión por el rigor académico y la eficiencia en el mundo real, conecto el diseño de sistemas complejos con experiencias web intuitivas.",
-    "about": {
-      "bio": "Ingeniero de Sistemas y Desarrollador Full Stack dedicado a diseñar software confiable, realizar investigación científica y formar a la próxima generación de ingenieros. Con pasión por el rigor académico y la eficiencia en el mundo real, conecto el diseño de sistemas complejos con experiencias web intuitivas.",
+  "about": {
+    "about": "Sobre mí",
+    "title": "Identidad y filosofía profesional",
+    "description": "Conectar la lógica de sistemas físicos con entornos de frontend digital para resolver cuellos de botella administrativos complejos.",
+    "bio": "Soy Ingeniero de Sistemas y Desarrollador Full Stack que cree que la tecnología debe servir a las personas. Más allá de la programación, soy profesor, investigador y aprendiz permanente. Disfruto mentorizar estudiantes, explorar nuevas tecnologías y contribuir a proyectos de código abierto. Mi trabajo está impulsado por el deseo de construir soluciones que no solo sean eficientes y escalables, sino también significativas y accesibles. Me esfuerzo por unir sistemas complejos con las necesidades humanas, manteniendo siempre al usuario final en el centro de cada decisión.",
       "philosophy": "Creo en construir software mantenible, robusto y accesible. Ya sea diseñando bases de datos o impartiendo clases sobre algoritmos, mi enfoque siempre está en resolver problemas estructurales en lugar de aplicar soluciones superficiales.",
       "highlights": [
         {
@@ -41,8 +36,18 @@
           "description": "Conectando la teoría académica, las metodologías modernas de ingeniería y la investigación para construir aplicaciones de alto impacto.",
           "color": "from-purple-500 to-pink-500"
         }
-      ]
-    },
+    ]
+  },
+  "personalInfo": {
+    "name": "Richard Rivera",
+    "title": "Ingeniero de Sistemas y Desarrollador Full Stack",
+    "roles": [
+      "Ingeniero de Sistemas",
+      "Desarrollador Full Stack",
+      "Profesor Universitario"
+    ],
+    "tagline": "Construyendo soluciones tecnológicas que generan un impacto real.",
+    "description": "Ingeniero de Sistemas y Desarrollador Full Stack apasionado por crear sistemas confiables, escalables y experiencias de usuario intuitivas.",
     "socials": {
       "email": "rojasrichard2508@gmail.com",
       "github": "https://github.com/RichardRivRoj",
