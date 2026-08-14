@@ -101,6 +101,70 @@
   "title": "Professional & Academic Journey",
   "description": "A timeline highlighting professional growth, systems engineering achievements, and educational positions."
 },
+"techStack": [
+    {
+      "category": "Frontend",
+      "items": [
+        { "name": "React", "icon": "ReactIcon" },
+        { "name": "Next.js", "icon": "NextIcon" },
+        { "name": "TypeScript", "icon": "TypeScriptIcon" },
+        { "name": "JavaScript", "icon": "JavaScriptIcon" },
+        { "name": "Tailwind", "icon": "TailwindIcon" }
+      ]
+    },
+    {
+      "category": "Backend",
+      "items": [
+        { "name": "Python", "icon": "PythonIcon" },
+        { "name": "Node.js", "icon": "NodeJsIcon" },
+        { "name": "PHP", "icon": "PHPIcon" },
+        { "name": "Django", "icon": "DjangoIcon" },
+        { "name": "FastAPI", "icon": "FastAPIIcon" },
+        { "name": "Laravel", "icon": "LaravelIcon" }
+      ]
+    },
+    {
+      "category": "Database",
+      "items": [
+        { "name": "MySQL", "icon": "MysqlIcon" },
+        { "name": "PostgreSQL", "icon": "PostgreSqlIcon" },
+        { "name": "MariaDB", "icon": "MariaDBIcon" },
+        { "name": "SQL Server", "icon": "SqlIcon" }
+      ]
+    },
+    {
+      "category": "DevOps",
+      "items": [
+        { "name": "Docker", "icon": "DockerIcon" },
+        { "name": "Git", "icon": "GitIcon" },
+        { "name": "GitHub", "icon": "GitHubIcon" },
+        { "name": "Linux", "icon": "LinuxIcon" },
+        { "name": "Postman", "icon": "PostmanIcon" }
+      ]
+    },
+    {
+      "category": "Robotics & IoT",
+      "items": [
+        { "name": "C", "icon": "CIcon" },
+        { "name": "C++", "icon": "CppIcon" },
+        { "name": "Arduino", "icon": "ArduinoIcon" },
+        { "name": "ESP32", "icon": "ESP32Icon" },
+        { "name": "Fusion 360", "icon": "Fusion360Icon" }
+      ]
+    },
+    {
+      "category": "Tools",
+      "items": [
+        { "name": "Figma", "icon": "FigmaIcon" },
+        { "name": "Canva", "icon": "CanvaIcon" }
+      ]
+    }
+  ],
+  "techStackSection": {
+  "subtitle": "Expertise",
+  "title": "Technology Stack",
+  "description": "Technologies and tools I use to design, develop, deploy, and maintain robust software solutions."
+},
   "personalInfo": {
     "name": "Richard Rivera",
     "title": "Systems Engineer & Full Stack Developer",

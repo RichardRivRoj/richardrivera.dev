@@ -25,6 +25,12 @@
   --radius-custom-sm: 12px;
   --radius-custom-md: 16px;
   --radius-custom-lg: 24px;
+
+  --animate-tech-marquee-left:
+    tech-marquee-left 45s linear infinite;
+
+  --animate-tech-marquee-right:
+    tech-marquee-right 50s linear infinite;
 }
 
 @layer base {
@@ -101,6 +107,35 @@
   }
 }
 
+@keyframes tech-marquee-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes tech-marquee-right {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-tech-marquee-left,
+  .animate-tech-marquee-right {
+    animation-play-state: paused !important;
+  }
+}
+
 .typewriter-cursor {
   animation: typewriter-cursor 0.8s steps(1) infinite;
 }
+
+

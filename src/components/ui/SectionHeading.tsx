@@ -5,6 +5,7 @@ interface SectionHeadingProps {
   subtitle: string;
   description?: string;
   alignment?: "left" | "center";
+  className?: string;
 }
 
 export function SectionHeading({
@@ -12,13 +13,14 @@ export function SectionHeading({
   subtitle,
   description,
   alignment = "center",
+  className,
 }: SectionHeadingProps) {
   const isCenter = alignment === "center";
   return (
     <div
       className={`mb-16 flex flex-col ${
         isCenter ? "items-center text-center" : "items-start text-left"
-      } max-w-3xl ${isCenter ? "mx-auto" : ""}`}
+      } max-w-3xl ${isCenter ? "mx-auto" : ""} ${className ?? ""}`}
     >
       <span className="text-xs font-bold tracking-widest uppercase text-primary dark:text-blue-400">
         {subtitle}
