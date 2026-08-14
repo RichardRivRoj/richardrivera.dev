@@ -38,6 +38,69 @@
         }
       ]
   },
+  "experience": [
+  {
+    "year": "Current",
+    "role": "Full Stack Developer & Researcher",
+    "organization": "Freelance & Academic Research",
+    "description": "Designing end-to-end full-stack applications with React/Django. Conducting peer-reviewed research in system optimizations, and lecturing in technical curriculum courses.",
+    "type": "developer"
+  },
+  {
+    "year": "2025 - Present",
+    "role": "University Professor",
+    "organization": "Universidad de Margarita",
+    "description": "Lectured on Systems Engineering courses including programming fundamentals, robotics, data structures, and technology project development. Designed didactic strategies combining theory with lab practices and collaborative projects. Served as thesis advisor and evaluator for research work in related disciplines.",
+    "type": "education"
+  },
+  {
+    "year": "2026",
+    "role": "Robotics Teacher",
+    "organization": "Unidad Educativa Domingo Savio",
+    "description": "Delivered theoretical and practical robotics training to elementary and high school students, covering programming, electronics, and 3D design fundamentals. Guided students in developing functional prototypes from simulated environments.",
+    "type": "robotics"
+  },
+  {
+    "year": "2026",
+    "role": "STEAM Education Teacher",
+    "organization": "Unidad Educativa Roraima",
+    "description": "Taught STEAM subjects to elementary students through interdisciplinary projects integrating science, technology, engineering, arts, and mathematics. Designed robotics and electronics activities using Arduino and Tinkercad, and led project-based learning initiatives connected to culture, environment, and entrepreneurship.",
+    "type": "education"
+  },
+  {
+    "year": "2025 - 2026",
+    "role": "Robotics Instructor",
+    "organization": "Soluciones Tecnológicas Bello F.P.",
+    "description": "Planned and delivered theoretical-practical robotics classes for students at various levels. Designed educational activities using Tinkercad for circuit simulation, Scratch for basic programming, and 3D modeling. Provided personalized mentorship to facilitate understanding of complex concepts.",
+    "type": "robotics"
+  },
+  {
+    "year": "2025",
+    "role": "Systems Engineer Graduate",
+    "organization": "Universidad de Margarita",
+    "description": "Graduated with honors. Developed an automated Human Capital Management (HCM) platform as an undergraduate thesis to resolve university operations deficits.",
+    "type": "graduation"
+  },
+  {
+    "year": "2021 - 2024",
+    "role": "IT & Administrative Assistant",
+    "organization": "Alcaldía del Municipio Gómez",
+    "description": "Provided technical support on internal platforms, administrative systems, and personnel databases, ensuring their operability and constant updating. Collaborated in administrative processes and staff support, and participated in institutional events, social activities, and community projects.",
+    "type": "work"
+  },
+  {
+    "year": "2021 - 2025",
+    "role": "Human Resources Intern",
+    "organization": "Universidad de Margarita",
+    "description": "Analyzed administrative operational pipelines, gathered systems requirements, and mapped internal organizational structures to optimize HR documentation processes.",
+    "type": "internship"
+  }
+],
+"experienceSection": {
+  "subtitle": "Experience",
+  "title": "Professional & Academic Journey",
+  "description": "A timeline highlighting professional growth, systems engineering achievements, and educational positions."
+},
   "personalInfo": {
     "name": "Richard Rivera",
     "title": "Systems Engineer & Full Stack Developer",

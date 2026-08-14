@@ -38,6 +38,69 @@
         }
     ]
   },
+  "experience": [
+  {
+    "year": "Actual",
+    "role": "Desarrollador Full Stack e Investigador",
+    "organization": "Freelance e Investigación Académica",
+    "description": "Diseñando aplicaciones full-stack de extremo a extremo con React/Django. Realizando investigación revisada por pares en optimizaciones de sistemas y dando clases en cursos de currículo técnico.",
+    "type": "developer"
+  },
+  {
+    "year": "2025 - Presente",
+    "role": "Profesor Universitario",
+    "organization": "Universidad de Margarita",
+    "description": "Impartí cursos de Ingeniería de Sistemas que incluyen fundamentos de programación, robótica, estructuras de datos y desarrollo de proyectos tecnológicos. Diseñé estrategias didácticas que combinan teoría con prácticas de laboratorio y proyectos colaborativos. Actué como tutor y jurado evaluador de trabajos de investigación en disciplinas afines.",
+    "type": "education"
+  },
+  {
+    "year": "2026",
+    "role": "Docente de Robótica",
+    "organization": "Unidad Educativa Domingo Savio",
+    "description": "Impartí formación teórica y práctica en robótica a estudiantes de educación básica y bachillerato, abarcando fundamentos de programación, electrónica y diseño 3D. Guié a los estudiantes en el desarrollo de prototipos funcionales a partir de entornos simulados.",
+    "type": "robotics"
+  },
+  {
+    "year": "2026",
+    "role": "Docente de Educación STEAM",
+    "organization": "Unidad Educativa Roraima",
+    "description": "Enseñé asignaturas STEAM a estudiantes de educación básica mediante proyectos interdisciplinarios que integran ciencia, tecnología, ingeniería, arte y matemáticas. Diseñé actividades de robótica y electrónica con Arduino y Tinkercad, y lideré iniciativas de aprendizaje basado en proyectos vinculados a la culture, el medioambiente y el emprendimiento.",
+    "type": "education"
+  },
+  {
+    "year": "2025 - 2026",
+    "role": "Instructor de Robótica",
+    "organization": "Soluciones Tecnológicas Bello F.P.",
+    "description": "Planifiqué y dicté clases teórico-prácticas de robótica para estudiantes de distintos niveles. Diseñé actividades educativas utilizando Tinkercad para simulación de circuitos, Scratch para programación básica y modelado 3D. Brindé mentoría personalizada para facilitar la comprensión de conceptos complejos.",
+    "type": "robotics"
+  },
+  {
+    "year": "2025",
+    "role": "Graduado en Ingeniería de Sistemas",
+    "organization": "Universidad de Margarita",
+    "description": "Graduado con honores. Desarrollé una plataforma automatizada de Gestión de Capital Humano (HCM) como tesis de pregrado para resolver déficits operativos universitarios.",
+    "type": "graduation"
+  },
+  {
+    "year": "2021 - 2024",
+    "role": "Asistente de TI y Administrativo",
+    "organization": "Alcaldía del Municipio Gómez",
+    "description": "Brindé soporte técnico en plataformas internas, sistemas administrativos y bases de datos del personal, garantizando su operatividad y actualización constante. Colaboré en procesos administrativos y de atención al personal, y participé en eventos institucionales, jornadas sociales y proyectos comunitarios.",
+    "type": "work"
+  },
+  {
+    "year": "2021 - 2025",
+    "role": "Becario en Recursos Humanos",
+    "organization": "Universidad de Margarita",
+    "description": "Analicé los flujos operativos administrativos, recopilé requisitos de sistemas y mapeé estructuras organizacionales internas para optimizar los procesos de documentación de RR.HH.",
+    "type": "internship"
+  }
+],
+"experienceSection": {
+  "subtitle": "Experiencia",
+  "title": "Trayectoria Profesional y Académica",
+  "description": "Una línea de tiempo que destaca el crecimiento profesional, los logros en Ingeniería de Sistemas y la experiencia en el ámbito educativo."
+},
   "personalInfo": {
     "name": "Richard Rivera",
     "title": "Ingeniero de Sistemas y Desarrollador Full Stack",
