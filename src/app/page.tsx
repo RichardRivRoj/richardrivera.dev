@@ -3,6 +3,7 @@ import Image from "next/image";
 import Navbar from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { About } from "./components/About";
+import { ExperienceTimeline } from "./components/ExperienceTimeline";
 
 export default function Home() {
   return (
@@ -16,6 +17,10 @@ export default function Home() {
 
         {/* About Section */}
         <About />
+
+        {/* Experience Timeline Section */}
+        <ExperienceTimeline />
+        
       </main>
     </>
   );
