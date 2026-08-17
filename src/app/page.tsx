@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { About } from "./components/About";
 import { ExperienceTimeline } from "./components/ExperienceTimeline";
+import { TechStack } from "./components/TechStack";
 
 export default function Home() {
   return (
@@ -20,6 +21,9 @@ export default function Home() {
 
         {/* Experience Timeline Section */}
         <ExperienceTimeline />
+
+        {/* Tech Stack Section */}
+        <TechStack />
         
       </main>
     </>

@@ -101,6 +101,70 @@
   "title": "Trayectoria Profesional y Académica",
   "description": "Una línea de tiempo que destaca el crecimiento profesional, los logros en Ingeniería de Sistemas y la experiencia en el ámbito educativo."
 },
+"techStack": [
+    {
+      "category": "Frontend",
+      "items": [
+        { "name": "React", "icon": "ReactIcon" },
+        { "name": "Next.js", "icon": "NextIcon" },
+        { "name": "TypeScript", "icon": "TypeScriptIcon" },
+        { "name": "JavaScript", "icon": "JavaScriptIcon" },
+        { "name": "Tailwind", "icon": "TailwindIcon" }
+      ]
+    },
+    {
+      "category": "Backend",
+      "items": [
+        { "name": "Python", "icon": "PythonIcon" },
+        { "name": "Node.js", "icon": "NodeJsIcon" },
+        { "name": "PHP", "icon": "PHPIcon" },
+        { "name": "Django", "icon": "DjangoIcon" },
+        { "name": "FastAPI", "icon": "FastAPIIcon" },
+        { "name": "Laravel", "icon": "LaravelIcon" }
+      ]
+    },
+    {
+      "category": "Base de datos",
+      "items": [
+        { "name": "MySQL", "icon": "MysqlIcon" },
+        { "name": "PostgreSQL", "icon": "PostgreSqlIcon" },
+        { "name": "MariaDB", "icon": "MariaDBIcon" },
+        { "name": "SQL Server", "icon": "SqlIcon" }
+      ]
+    },
+    {
+      "category": "DevOps",
+      "items": [
+        { "name": "Docker", "icon": "DockerIcon" },
+        { "name": "Git", "icon": "GitIcon" },
+        { "name": "GitHub", "icon": "GitHubIcon" },
+        { "name": "Linux", "icon": "LinuxIcon" },
+        { "name": "Postman", "icon": "PostmanIcon" }
+      ]
+    },
+    {
+      "category": "Robótica e IoT",
+      "items": [
+        { "name": "C", "icon": "CIcon" },
+        { "name": "C++", "icon": "CppIcon" },
+        { "name": "Arduino", "icon": "ArduinoIcon" },
+        { "name": "ESP32", "icon": "ESP32Icon" },
+        { "name": "Fusion 360", "icon": "Fusion360Icon" }
+      ]
+    },
+    {
+      "category": "Herramientas",
+      "items": [
+        { "name": "Figma", "icon": "FigmaIcon" },
+        { "name": "Canva", "icon": "CanvaIcon" }
+      ]
+    }
+  ],
+  "techStackSection": {
+  "subtitle": "Tecnologías",
+  "title": "Stack Tecnológico",
+  "description": "Tecnologías y herramientas que utilizo para diseñar, desarrollar, desplegar y mantener soluciones de software robustas."
+},
   "personalInfo": {
     "name": "Richard Rivera",
     "title": "Ingeniero de Sistemas y Desarrollador Full Stack",
