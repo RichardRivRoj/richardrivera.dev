@@ -165,6 +165,158 @@
   "title": "Stack Tecnológico",
   "description": "Tecnologías y herramientas que utilizo para diseñar, desarrollar, desplegar y mantener soluciones de software robustas."
 },
+"projects": [
+  {
+    "id": "hcm-system",
+    "title": "Sistema de Gestión de Capital Humano",
+    "description": "Sistema integral de Gestión de Capital Humano diseñado para optimizar, evaluar y automatizar los procesos administrativos de la Universidad de Margarita.",
+    "technologies": [
+      "Next.js",
+      "Django",
+      "PostgreSQL",
+      "Tailwind CSS"
+    ],
+    "thumbnail": "/projects/hcm_system.png",
+    "featured": true
+  }
+],
+
+"projectsSection": {
+  "subtitle": "Portafolio de Ingeniería",
+  "title": "Proyectos Destacados",
+  "description": "Una selección de sistemas de software, proyectos de investigación, simulaciones y tecnologías educativas diseñadas para resolver problemas reales."
+},
+"projectDetails": {
+  "hcm-system": {
+    "overview": {
+      "label": "Descripción del Proyecto",
+      "title": "Sistema de Gestión de Capital Humano",
+      "description": "Plataforma integral de Gestión de Capital Humano desarrollada para optimizar los procesos administrativos de la Dirección de Talento Humano de la Universidad de Margarita."
+    },
+
+    "problem": {
+      "label": "El Problema",
+      "title": "Un entorno administrativo complejo",
+      "description": "La Dirección de Talento Humano gestionaba diversos procesos mediante flujos de trabajo fragmentados, documentación manual y fuentes de información desconectadas. Esta situación incrementaba los tiempos de procesamiento, generaba duplicidad de información y dificultaba la obtención de datos confiables para la toma de decisiones."
+    },
+
+    "solution": {
+      "label": "La Solución",
+      "title": "Un ecosistema HCM centralizado",
+      "description": "El proyecto plantea una plataforma web centralizada que integra los procesos de Talento Humano en un entorno digital unificado, permitiendo gestionar la información de manera consistente y proporcionando herramientas para monitoreo, evaluación, generación de reportes y toma de decisiones."
+    },
+
+    "objectives": [
+      {
+        "title": "Optimización de Procesos",
+        "description": "Reducir operaciones administrativas innecesarias mediante flujos de trabajo digitales estructurados y automatizados."
+      },
+      {
+        "title": "Centralización de Información",
+        "description": "Proporcionar un entorno centralizado para gestionar información relacionada con el personal y los procesos organizacionales."
+      },
+      {
+        "title": "Apoyo a la Toma de Decisiones",
+        "description": "Proporcionar información estructurada e indicadores que faciliten el análisis administrativo y la toma de decisiones."
+      }
+    ],
+
+    "architecture": {
+      "label": "Arquitectura del Sistema",
+      "title": "Una arquitectura full-stack modular",
+      "description": "La plataforma utiliza una arquitectura modular que separa las capas de presentación, lógica de aplicación, servicios API y persistencia de datos.",
+      "diagram": "/projects/hcm-system/architecture.png"
+    },
+
+    "features": [
+      {
+        "title": "Gestión de Personal",
+        "description": "Gestión centralizada de información de empleados, registros y datos organizacionales."
+      },
+      {
+        "title": "Reclutamiento",
+        "description": "Flujos de trabajo digitales para gestionar procesos de reclutamiento e información de candidatos."
+      },
+      {
+        "title": "Capacitación",
+        "description": "Gestión y seguimiento de actividades de capacitación institucional y desarrollo del personal."
+      },
+      {
+        "title": "Evaluación de Desempeño",
+        "description": "Flujos estructurados de evaluación e indicadores para analizar el desempeño del personal."
+      },
+      {
+        "title": "Paneles y Reportes",
+        "description": "Paneles interactivos y reportes estructurados para monitorear información organizacional."
+      }
+    ],
+
+    "technologies": {
+      "label": "Tecnologías Utilizadas",
+      "frontend": [
+        "Next.js",
+        "React",
+        "JavaScript",
+        "Tailwind CSS"
+      ],
+      "backend": [
+        "Laravel",
+        "PHP",
+        "REST API"
+      ],
+      "database": [
+        "MySQL"
+      ],
+      "tools": [
+        "Git",
+        "GitHub",
+        "Docker"
+      ]
+    },
+
+    "gallery": [
+      {
+        "src": "/projects/hcm-system/dashboard.png",
+        "alt": "Panel principal del sistema HCM",
+        "caption": "Panel principal del sistema"
+      },
+      {
+        "src": "/projects/hcm-system/personnel.png",
+        "alt": "Módulo de gestión de personal",
+        "caption": "Módulo de gestión de personal"
+      },
+      {
+        "src": "/projects/hcm-system/recruitment.png",
+        "alt": "Módulo de reclutamiento",
+        "caption": "Flujo de gestión de reclutamiento"
+      },
+      {
+        "src": "/projects/hcm-system/evaluation.png",
+        "alt": "Módulo de evaluación de desempeño",
+        "caption": "Interfaz de evaluación de desempeño"
+      }
+    ],
+
+    "videos": [
+      {
+        "title": "Demostración del Sistema",
+        "description": "Recorrido audiovisual por los principales procesos y funcionalidades de la plataforma.",
+        "url": ""
+      }
+    ],
+
+    "results": {
+      "label": "Resultados",
+      "title": "De procesos fragmentados a un sistema integrado",
+      "description": "El proyecto estableció una base tecnológica para centralizar los procesos de Talento Humano, mejorar la organización de la información, aumentar la visibilidad de los flujos de trabajo y facilitar el acceso a datos administrativos estructurados."
+    },
+
+    "links": {
+      "github": "https://github.com/RichardRivRoj/hcm_unimar",
+      "live": "#"
+    }
+  }
+},
   "personalInfo": {
     "name": "Richard Rivera",
     "title": "Ingeniero de Sistemas y Desarrollador Full Stack",
