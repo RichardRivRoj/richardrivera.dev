@@ -1,199 +1,581 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTheme } from "@/components/ThemeProvider";
 import { useTranslation } from "@/hooks/useTranslation";
-import { Menu, X, Sun, Moon, Download, Globe } from "lucide-react";
+import {
+  Menu,
+  X,
+  Sun,
+  Moon,
+  Download,
+  Globe,
+} from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
 interface NavLink {
-  label: string;      // Clave de traducción (ej: "nav.home")
+  label: string;
   href: string;
-  isAnchor: boolean;  // Corregido: boolean (no Boolean)
 }
 
 export default function Navbar() {
   const pathname = usePathname();
+
   const { theme, toggleTheme } = useTheme();
-  const { locale, toggleLanguage } = useTranslation();
-  const { t } = useTranslation();
+  const { locale, toggleLanguage, t } = useTranslation();
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Efecto para detectar scroll con umbral (mejor experiencia)
+  /**
+   * Detectar scroll.
+   *
+   * Esto permite que el Navbar sea transparente
+   * al inicio y adquiera fondo cuando el usuario
+   * comienza a desplazarse.
+   */
   useEffect(() => {
     const handleScroll = () => {
-      // Añade un pequeño umbral para que no se active con 1px
-      const offset = window.scrollY;
-      setScrolled(offset > 10);
+      setScrolled(window.scrollY > 10);
     };
+
+    handleScroll();
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
-  // Cerrar menú al redimensionar a escritorio (mejora UX)
+  /**
+   * Cerrar menú móvil al pasar a desktop.
+   */
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 768) setIsMenuOpen(false);
+      if (window.innerWidth >= 768) {
+        setIsMenuOpen(false);
+      }
     };
+
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
-  // Enlaces del navbar (todos son anclas)
+  /**
+   * Navegación principal.
+   *
+   * En Home:
+   *   #home
+   *   #about
+   *
+   * En páginas internas:
+   *   /#home
+   *   /#about
+   *
+   * Esto permite que el Navbar funcione
+   * correctamente en /projects/[id].
+   */
   const navLinks: NavLink[] = [
-    { label: "nav.home", href: pathname === "/" ? "#home" : "/#home", isAnchor: true },
-    { label: "nav.about", href: pathname === "/" ? "#about" : "/#about", isAnchor: true },
-    { label: "nav.experience", href: pathname === "/" ? "#experience" : "/#experience", isAnchor: true },
-    { label: "nav.technology", href: pathname === "/" ? "#technology" : "/#technology", isAnchor: true },
-    { label: "nav.projects", href: pathname === "/" ? "#projects" : "/#projects", isAnchor: true },
-    { label: "nav.contact", href: pathname === "/" ? "#contact" : "/#contact", isAnchor: true },
+    {
+      label: "nav.home",
+      href: pathname === "/" ? "#home" : "/#home",
+    },
+    {
+      label: "nav.about",
+      href: pathname === "/" ? "#about" : "/#about",
+    },
+    {
+      label: "nav.experience",
+      href: pathname === "/" ? "#experience" : "/#experience",
+    },
+    {
+      label: "nav.technology",
+      href: pathname === "/" ? "#technology" : "/#technology",
+    },
+    {
+      label: "nav.projects",
+      href: pathname === "/" ? "#projects" : "/#projects",
+    },
+    {
+      label: "nav.contact",
+      href: pathname === "/" ? "#contact" : "/#contact",
+    },
   ];
 
-  const handleLinkClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    link: NavLink
-  ) => {
+  /**
+   * Cerrar menú móvil al seleccionar
+   * cualquier elemento de navegación.
+   */
+  const handleLinkClick = () => {
     setIsMenuOpen(false);
-    // Si es un ancla y no estamos en la home, redirigimos y luego scrolleamos
-    if (link.isAnchor && pathname !== "/") {
-      e.preventDefault();
-      const targetId = link.href.replace("/#", "");
-      const targetElement = document.querySelector(`#${targetId}`);
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: "smooth" });
-      }
-    }
   };
+
+  /**
+   * Determina si estamos dentro de una
+   * página de proyecto.
+   */
+  const isProjectDetail =
+    pathname.startsWith("/projects/");
 
   return (
     <nav
-      className={`fixed top-0 left-0 z-50 flex h-20 w-full items-center transition-all duration-300 ${
-        scrolled
-          ? "bg-white/80 backdrop-blur-md shadow-sm dark:bg-slate-900/80 dark:shadow-slate-800/20"
-          : "bg-transparent"
-      }`}
+      className={`
+        fixed
+        top-0
+        left-0
+        z-50
+        flex
+        h-20
+        w-full
+        items-center
+        transition-all
+        duration-300
+
+        ${
+          scrolled || isProjectDetail
+            ? `
+              border-b
+              border-slate-200/70
+              bg-white/85
+              shadow-sm
+              backdrop-blur-md
+
+              dark:border-slate-800/70
+              dark:bg-slate-950/85
+              dark:shadow-slate-900/20
+            `
+            : "bg-transparent"
+        }
+      `}
     >
-      <div className="mx-auto flex w-full max-w-[1400px] items-center justify-between px-6">
-        {/* Logo */}
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1400px]
+          items-center
+          justify-between
+          px-6
+        "
+      >
+        {/* ================================================= */}
+        {/* LOGO                                             */}
+        {/* ================================================= */}
+
         <Link
           href="/"
-          className="text-primary font-display text-2xl font-extrabold tracking-tighter transition-transform hover:scale-105 dark:text-blue-500"
+          onClick={handleLinkClick}
+          className="
+            font-display
+            text-2xl
+            font-extrabold
+            tracking-tighter
+            text-blue-600
+            transition-transform
+            duration-200
+            hover:scale-105
+
+            dark:text-blue-500
+          "
         >
           RR
         </Link>
 
-        {/* Desktop Navigation Links */}
-        <div className="hidden items-center gap-10 md:flex">
+        {/* ================================================= */}
+        {/* DESKTOP NAVIGATION                               */}
+        {/* ================================================= */}
+
+        <div
+          className="
+            hidden
+            items-center
+            gap-10
+            md:flex
+          "
+        >
           {navLinks.map((link) => (
             <Link
               key={link.label}
               href={link.href}
-              onClick={(e) => handleLinkClick(e, link)}
-              className="hover:text-primary relative font-display text-sm font-medium text-slate-600 transition-colors after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all hover:after:w-full dark:text-slate-300 dark:hover:text-blue-400"
+              onClick={handleLinkClick}
+              className="
+                relative
+                font-display
+                text-sm
+                font-medium
+                text-slate-600
+                transition-colors
+
+                after:absolute
+                after:bottom-0
+                after:left-0
+                after:h-[2px]
+                after:w-0
+                after:bg-blue-500
+                after:transition-all
+                after:duration-300
+
+                hover:text-blue-600
+                hover:after:w-full
+
+                dark:text-slate-300
+                dark:hover:text-blue-400
+              "
             >
               {t(link.label)}
             </Link>
           ))}
         </div>
 
-        {/* Right side controls (Desktop) */}
-        <div className="hidden items-center gap-4 md:flex">
-          {/* Tema */}
+        {/* ================================================= */}
+        {/* DESKTOP CONTROLS                                */}
+        {/* ================================================= */}
+
+        <div
+          className="
+            hidden
+            items-center
+            gap-3
+            md:flex
+          "
+        >
+          {/* Theme */}
+
           <button
+            type="button"
             onClick={toggleTheme}
-            className="rounded-full p-2.5 text-slate-600 transition-colors hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
-            aria-label="Toggle theme"
+            className="
+              rounded-full
+              p-2.5
+              text-slate-600
+              transition-all
+              duration-200
+
+              hover:bg-slate-100
+              hover:text-blue-600
+
+              dark:text-slate-300
+              dark:hover:bg-slate-800
+              dark:hover:text-blue-400
+            "
+            aria-label={
+              theme === "light"
+                ? "Enable dark mode"
+                : "Enable light mode"
+            }
           >
-            {theme === "light" ? <Moon size={18} /> : <Sun size={18} />}
+            <motion.div
+              key={theme}
+              initial={{
+                rotate: -45,
+                scale: 0.7,
+                opacity: 0,
+              }}
+              animate={{
+                rotate: 0,
+                scale: 1,
+                opacity: 1,
+              }}
+              transition={{
+                duration: 0.2,
+              }}
+            >
+              {theme === "light" ? (
+                <Moon size={18} />
+              ) : (
+                <Sun size={18} />
+              )}
+            </motion.div>
           </button>
 
-          {/* Idioma */}
+          {/* Language */}
+
           <button
+            type="button"
             onClick={toggleLanguage}
-            className="group flex items-center gap-1.5 rounded-full p-2.5 text-slate-600 transition-colors hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+            className="
+              group
+              flex
+              items-center
+              gap-1.5
+              rounded-full
+              p-2.5
+              text-slate-600
+              transition-colors
+
+              hover:bg-slate-100
+              hover:text-blue-600
+
+              dark:text-slate-300
+              dark:hover:bg-slate-800
+              dark:hover:text-blue-400
+            "
             aria-label="Toggle language"
           >
             <Globe
               size={16}
-              className="transition-transform group-hover:rotate-12"
+              className="
+                transition-transform
+                duration-300
+                group-hover:rotate-12
+              "
             />
-            <span className="text-xs font-semibold tracking-wide uppercase">
+
+            <span
+              className="
+                text-xs
+                font-semibold
+                uppercase
+                tracking-wide
+              "
+            >
               {locale === "en" ? "ES" : "EN"}
             </span>
           </button>
 
-          {/* CV - Traducido */}
+          {/* CV */}
+
           <a
-            href={t("personalInfo.socials.cvUrl")}
-            download
-            className="rounded-custom-sm flex items-center gap-2 bg-slate-900 px-5 py-2.5 text-xs font-semibold text-white shadow-sm transition-all duration-200 hover:bg-slate-800 dark:bg-blue-600 dark:hover:bg-blue-500"
+            href={t<string>(
+              "personalInfo.socials.cvUrl"
+            )}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              ml-2
+              flex
+              items-center
+              gap-2
+              rounded-custom-sm
+              bg-slate-900
+              px-5
+              py-2.5
+              text-xs
+              font-semibold
+              text-white
+              shadow-sm
+              transition-all
+              duration-200
+
+              hover:bg-slate-800
+              hover:shadow-md
+
+              dark:bg-blue-600
+              dark:hover:bg-blue-500
+            "
           >
             <Download size={14} />
+
             {t("nav.cv")}
           </a>
         </div>
 
-        {/* Mobile controls (tema, idioma, hamburguesa) */}
-        <div className="flex items-center gap-2 md:hidden">
+        {/* ================================================= */}
+        {/* MOBILE CONTROLS                                  */}
+        {/* ================================================= */}
+
+        <div
+          className="
+            flex
+            items-center
+            gap-1
+            md:hidden
+          "
+        >
+          {/* Theme */}
+
           <button
+            type="button"
             onClick={toggleTheme}
-            className="rounded-full p-2 text-slate-600 transition-colors hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+            className="
+              rounded-full
+              p-2
+              text-slate-600
+              transition-colors
+
+              hover:bg-slate-100
+
+              dark:text-slate-300
+              dark:hover:bg-slate-800
+            "
             aria-label="Toggle theme"
           >
-            {theme === "light" ? <Moon size={18} /> : <Sun size={18} />}
+            {theme === "light" ? (
+              <Moon size={18} />
+            ) : (
+              <Sun size={18} />
+            )}
           </button>
+
+          {/* Language */}
+
           <button
+            type="button"
             onClick={toggleLanguage}
-            className="group flex items-center gap-1.5 rounded-full p-2 text-slate-600 transition-colors hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+            className="
+              flex
+              items-center
+              gap-1.5
+              rounded-full
+              p-2
+              text-slate-600
+              transition-colors
+
+              hover:bg-slate-100
+
+              dark:text-slate-300
+              dark:hover:bg-slate-800
+            "
             aria-label="Toggle language"
           >
-            <Globe
-              size={16}
-              className="transition-transform group-hover:rotate-12"
-            />
-            <span className="text-xs font-semibold tracking-wide uppercase">
+            <Globe size={16} />
+
+            <span
+              className="
+                text-[11px]
+                font-semibold
+                uppercase
+              "
+            >
               {locale === "en" ? "ES" : "EN"}
             </span>
           </button>
+
+          {/* Menu */}
+
           <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="rounded-full p-2 text-slate-600 transition-colors hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
-            aria-label="Toggle menu"
+            type="button"
+            onClick={() =>
+              setIsMenuOpen((current) => !current)
+            }
+            className="
+              rounded-full
+              p-2
+              text-slate-600
+              transition-colors
+
+              hover:bg-slate-100
+
+              dark:text-slate-300
+              dark:hover:bg-slate-800
+            "
+            aria-label="Toggle navigation menu"
           >
-            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            {isMenuOpen ? (
+              <X size={20} />
+            ) : (
+              <Menu size={20} />
+            )}
           </button>
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* =================================================== */}
+      {/* MOBILE DRAWER                                      */}
+      {/* =================================================== */}
+
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
-            className="absolute top-20 left-0 flex w-full flex-col gap-4 border-b border-slate-200 bg-white/95 backdrop-blur-sm px-6 py-6 shadow-lg dark:border-slate-800 dark:bg-slate-900/95"
+            initial={{
+              opacity: 0,
+              y: -10,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            exit={{
+              opacity: 0,
+              y: -10,
+            }}
+            transition={{
+              duration: 0.2,
+            }}
+            className="
+              absolute
+              top-20
+              left-0
+              flex
+              w-full
+              flex-col
+              gap-3
+              border-b
+              border-slate-200
+              bg-white/95
+              px-6
+              py-6
+              shadow-lg
+              backdrop-blur-md
+
+              dark:border-slate-800
+              dark:bg-slate-950/95
+            "
           >
             {navLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
-                onClick={(e) => handleLinkClick(e, link)}
-                className="font-display border-b border-slate-100 py-2 text-base font-medium text-slate-800 transition-colors hover:text-blue-600 dark:border-slate-800/50 dark:text-slate-200 dark:hover:text-blue-400"
+                onClick={handleLinkClick}
+                className="
+                  border-b
+                  border-slate-100
+                  py-3
+                  font-display
+                  text-base
+                  font-medium
+                  text-slate-800
+                  transition-colors
+
+                  hover:text-blue-600
+
+                  dark:border-slate-800/60
+                  dark:text-slate-200
+                  dark:hover:text-blue-400
+                "
               >
                 {t(link.label)}
               </Link>
             ))}
+
+            {/* CV */}
+
             <a
-              href={t("personalInfo.socials.cvUrl")}
-              download
-              className="rounded-custom-sm mt-2 flex w-full items-center justify-center gap-2 bg-slate-900 py-3 font-semibold text-white transition-colors hover:bg-slate-800 dark:bg-blue-600 dark:hover:bg-blue-500"
+              href={t<string>(
+                "personalInfo.socials.cvUrl"
+              )}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={handleLinkClick}
+              className="
+                mt-3
+                flex
+                w-full
+                items-center
+                justify-center
+                gap-2
+                rounded-custom-sm
+                bg-slate-900
+                py-3
+                font-semibold
+                text-white
+                transition-colors
+
+                hover:bg-slate-800
+
+                dark:bg-blue-600
+                dark:hover:bg-blue-500
+              "
             >
               <Download size={16} />
+
               {t("nav.download_cv")}
             </a>
           </motion.div>

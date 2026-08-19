@@ -5,6 +5,7 @@ import { Hero } from "./components/Hero";
 import { About } from "./components/About";
 import { ExperienceTimeline } from "./components/ExperienceTimeline";
 import { TechStack } from "./components/TechStack";
+import { FeaturedProjects } from "./components/FeaturedProjects";
 
 export default function Home() {
   return (
@@ -24,6 +25,9 @@ export default function Home() {
 
         {/* Tech Stack Section */}
         <TechStack />
+
+        {/* Projects Section */}
+        <FeaturedProjects />
         
       </main>
     </>
