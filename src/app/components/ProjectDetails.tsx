@@ -39,7 +39,7 @@ export function ProjectDetails({
   }
 
   return (
-    <main className="min-h-screen overflow-hidden bg-white text-slate-900 dark:bg-slate-950 dark:text-white">
+    <main className="min-h-screen overflow-hidden py-18 lg:py-20 bg-white text-slate-900 dark:bg-slate-950 dark:text-white">
       <ProjectHero project={project} />
 
       <ProjectProblemSolution

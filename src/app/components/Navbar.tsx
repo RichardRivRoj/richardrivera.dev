@@ -5,14 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTheme } from "@/components/ThemeProvider";
 import { useTranslation } from "@/hooks/useTranslation";
-import {
-  Menu,
-  X,
-  Sun,
-  Moon,
-  Download,
-  Globe,
-} from "lucide-react";
+import { Menu, X, Sun, Moon, Download, Globe } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
 interface NavLink {
@@ -120,51 +113,17 @@ export default function Navbar() {
    * Determina si estamos dentro de una
    * página de proyecto.
    */
-  const isProjectDetail =
-    pathname.startsWith("/projects/");
+  const isProjectDetail = pathname.startsWith("/projects/");
 
   return (
     <nav
-      className={`
-        fixed
-        top-0
-        left-0
-        z-50
-        flex
-        h-20
-        w-full
-        items-center
-        transition-all
-        duration-300
-
-        ${
-          scrolled || isProjectDetail
-            ? `
-              border-b
-              border-slate-200/70
-              bg-white/85
-              shadow-sm
-              backdrop-blur-md
-
-              dark:border-slate-800/70
-              dark:bg-slate-950/85
-              dark:shadow-slate-900/20
-            `
-            : "bg-transparent"
-        }
-      `}
+      className={`fixed top-0 left-0 z-50 flex h-20 w-full items-center transition-all duration-300 ${
+        scrolled || isProjectDetail
+          ? `border-b border-slate-200/70 bg-white/85 shadow-sm backdrop-blur-md dark:border-slate-800/70 dark:bg-slate-950/85 dark:shadow-slate-900/20`
+          : "bg-transparent"
+      } `}
     >
-      <div
-        className="
-          mx-auto
-          flex
-          w-full
-          max-w-[1400px]
-          items-center
-          justify-between
-          px-6
-        "
-      >
+      <div className="mx-auto flex w-full max-w-350 items-center justify-between px-6">
         {/* ================================================= */}
         {/* LOGO                                             */}
         {/* ================================================= */}
@@ -172,18 +131,7 @@ export default function Navbar() {
         <Link
           href="/"
           onClick={handleLinkClick}
-          className="
-            font-display
-            text-2xl
-            font-extrabold
-            tracking-tighter
-            text-blue-600
-            transition-transform
-            duration-200
-            hover:scale-105
-
-            dark:text-blue-500
-          "
+          className="font-display text-2xl font-extrabold tracking-tighter text-blue-600 transition-transform duration-200 hover:scale-105 dark:text-blue-500"
         >
           RR
         </Link>
@@ -192,42 +140,13 @@ export default function Navbar() {
         {/* DESKTOP NAVIGATION                               */}
         {/* ================================================= */}
 
-        <div
-          className="
-            hidden
-            items-center
-            gap-10
-            md:flex
-          "
-        >
+        <div className="hidden items-center gap-10 md:flex">
           {navLinks.map((link) => (
             <Link
               key={link.label}
               href={link.href}
               onClick={handleLinkClick}
-              className="
-                relative
-                font-display
-                text-sm
-                font-medium
-                text-slate-600
-                transition-colors
-
-                after:absolute
-                after:bottom-0
-                after:left-0
-                after:h-[2px]
-                after:w-0
-                after:bg-blue-500
-                after:transition-all
-                after:duration-300
-
-                hover:text-blue-600
-                hover:after:w-full
-
-                dark:text-slate-300
-                dark:hover:text-blue-400
-              "
+              className="font-display relative text-sm font-medium text-slate-600 transition-colors after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-blue-500 after:transition-all after:duration-300 hover:text-blue-600 hover:after:w-full dark:text-slate-300 dark:hover:text-blue-400"
             >
               {t(link.label)}
             </Link>
@@ -238,37 +157,15 @@ export default function Navbar() {
         {/* DESKTOP CONTROLS                                */}
         {/* ================================================= */}
 
-        <div
-          className="
-            hidden
-            items-center
-            gap-3
-            md:flex
-          "
-        >
+        <div className="hidden items-center gap-3 md:flex">
           {/* Theme */}
 
           <button
             type="button"
             onClick={toggleTheme}
-            className="
-              rounded-full
-              p-2.5
-              text-slate-600
-              transition-all
-              duration-200
-
-              hover:bg-slate-100
-              hover:text-blue-600
-
-              dark:text-slate-300
-              dark:hover:bg-slate-800
-              dark:hover:text-blue-400
-            "
+            className="rounded-full p-2.5 text-slate-600 transition-all duration-200 hover:bg-slate-100 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400"
             aria-label={
-              theme === "light"
-                ? "Enable dark mode"
-                : "Enable light mode"
+              theme === "light" ? "Enable dark mode" : "Enable light mode"
             }
           >
             <motion.div
@@ -287,11 +184,7 @@ export default function Navbar() {
                 duration: 0.2,
               }}
             >
-              {theme === "light" ? (
-                <Moon size={18} />
-              ) : (
-                <Sun size={18} />
-              )}
+              {theme === "light" ? <Moon size={18} /> : <Sun size={18} />}
             </motion.div>
           </button>
 
@@ -300,42 +193,15 @@ export default function Navbar() {
           <button
             type="button"
             onClick={toggleLanguage}
-            className="
-              group
-              flex
-              items-center
-              gap-1.5
-              rounded-full
-              p-2.5
-              text-slate-600
-              transition-colors
-
-              hover:bg-slate-100
-              hover:text-blue-600
-
-              dark:text-slate-300
-              dark:hover:bg-slate-800
-              dark:hover:text-blue-400
-            "
+            className="group flex items-center gap-1.5 rounded-full p-2.5 text-slate-600 transition-colors hover:bg-slate-100 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400"
             aria-label="Toggle language"
           >
             <Globe
               size={16}
-              className="
-                transition-transform
-                duration-300
-                group-hover:rotate-12
-              "
+              className="transition-transform duration-300 group-hover:rotate-12"
             />
 
-            <span
-              className="
-                text-xs
-                font-semibold
-                uppercase
-                tracking-wide
-              "
-            >
+            <span className="text-xs font-semibold tracking-wide uppercase">
               {locale === "en" ? "ES" : "EN"}
             </span>
           </button>
@@ -343,33 +209,10 @@ export default function Navbar() {
           {/* CV */}
 
           <a
-            href={t<string>(
-              "personalInfo.socials.cvUrl"
-            )}
+            href={t<string>("personalInfo.socials.cvUrl")}
             target="_blank"
             rel="noopener noreferrer"
-            className="
-              ml-2
-              flex
-              items-center
-              gap-2
-              rounded-custom-sm
-              bg-slate-900
-              px-5
-              py-2.5
-              text-xs
-              font-semibold
-              text-white
-              shadow-sm
-              transition-all
-              duration-200
-
-              hover:bg-slate-800
-              hover:shadow-md
-
-              dark:bg-blue-600
-              dark:hover:bg-blue-500
-            "
+            className="rounded-custom-sm ml-2 flex items-center gap-2 bg-slate-900 px-5 py-2.5 text-xs font-semibold text-white shadow-sm transition-all duration-200 hover:bg-slate-800 hover:shadow-md dark:bg-blue-600 dark:hover:bg-blue-500"
           >
             <Download size={14} />
 
@@ -381,37 +224,16 @@ export default function Navbar() {
         {/* MOBILE CONTROLS                                  */}
         {/* ================================================= */}
 
-        <div
-          className="
-            flex
-            items-center
-            gap-1
-            md:hidden
-          "
-        >
+        <div className="flex items-center gap-1 md:hidden">
           {/* Theme */}
 
           <button
             type="button"
             onClick={toggleTheme}
-            className="
-              rounded-full
-              p-2
-              text-slate-600
-              transition-colors
-
-              hover:bg-slate-100
-
-              dark:text-slate-300
-              dark:hover:bg-slate-800
-            "
+            className="rounded-full p-2 text-slate-600 transition-colors hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
             aria-label="Toggle theme"
           >
-            {theme === "light" ? (
-              <Moon size={18} />
-            ) : (
-              <Sun size={18} />
-            )}
+            {theme === "light" ? <Moon size={18} /> : <Sun size={18} />}
           </button>
 
           {/* Language */}
@@ -419,31 +241,12 @@ export default function Navbar() {
           <button
             type="button"
             onClick={toggleLanguage}
-            className="
-              flex
-              items-center
-              gap-1.5
-              rounded-full
-              p-2
-              text-slate-600
-              transition-colors
-
-              hover:bg-slate-100
-
-              dark:text-slate-300
-              dark:hover:bg-slate-800
-            "
+            className="flex items-center gap-1.5 rounded-full p-2 text-slate-600 transition-colors hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
             aria-label="Toggle language"
           >
             <Globe size={16} />
 
-            <span
-              className="
-                text-[11px]
-                font-semibold
-                uppercase
-              "
-            >
+            <span className="text-[11px] font-semibold uppercase">
               {locale === "en" ? "ES" : "EN"}
             </span>
           </button>
@@ -452,27 +255,11 @@ export default function Navbar() {
 
           <button
             type="button"
-            onClick={() =>
-              setIsMenuOpen((current) => !current)
-            }
-            className="
-              rounded-full
-              p-2
-              text-slate-600
-              transition-colors
-
-              hover:bg-slate-100
-
-              dark:text-slate-300
-              dark:hover:bg-slate-800
-            "
+            onClick={() => setIsMenuOpen((current) => !current)}
+            className="rounded-full p-2 text-slate-600 transition-colors hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
             aria-label="Toggle navigation menu"
           >
-            {isMenuOpen ? (
-              <X size={20} />
-            ) : (
-              <Menu size={20} />
-            )}
+            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
@@ -499,47 +286,14 @@ export default function Navbar() {
             transition={{
               duration: 0.2,
             }}
-            className="
-              absolute
-              top-20
-              left-0
-              flex
-              w-full
-              flex-col
-              gap-3
-              border-b
-              border-slate-200
-              bg-white/95
-              px-6
-              py-6
-              shadow-lg
-              backdrop-blur-md
-
-              dark:border-slate-800
-              dark:bg-slate-950/95
-            "
+            className="absolute top-20 left-0 flex w-full flex-col gap-3 border-b border-slate-200 bg-white/95 px-6 py-6 shadow-lg backdrop-blur-md dark:border-slate-800 dark:bg-slate-950/95"
           >
             {navLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
                 onClick={handleLinkClick}
-                className="
-                  border-b
-                  border-slate-100
-                  py-3
-                  font-display
-                  text-base
-                  font-medium
-                  text-slate-800
-                  transition-colors
-
-                  hover:text-blue-600
-
-                  dark:border-slate-800/60
-                  dark:text-slate-200
-                  dark:hover:text-blue-400
-                "
+                className="font-display border-b border-slate-100 py-3 text-base font-medium text-slate-800 transition-colors hover:text-blue-600 dark:border-slate-800/60 dark:text-slate-200 dark:hover:text-blue-400"
               >
                 {t(link.label)}
               </Link>
@@ -548,31 +302,11 @@ export default function Navbar() {
             {/* CV */}
 
             <a
-              href={t<string>(
-                "personalInfo.socials.cvUrl"
-              )}
+              href={t<string>("personalInfo.socials.cvUrl")}
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleLinkClick}
-              className="
-                mt-3
-                flex
-                w-full
-                items-center
-                justify-center
-                gap-2
-                rounded-custom-sm
-                bg-slate-900
-                py-3
-                font-semibold
-                text-white
-                transition-colors
-
-                hover:bg-slate-800
-
-                dark:bg-blue-600
-                dark:hover:bg-blue-500
-              "
+              className="rounded-custom-sm mt-3 flex w-full items-center justify-center gap-2 bg-slate-900 py-3 font-semibold text-white transition-colors hover:bg-slate-800 dark:bg-blue-600 dark:hover:bg-blue-500"
             >
               <Download size={16} />
 

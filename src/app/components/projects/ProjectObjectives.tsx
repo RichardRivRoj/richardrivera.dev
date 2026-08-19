@@ -15,8 +15,8 @@ export function ProjectObjectives({ project }: ProjectObjectivesProps) {
   const { t } = useTranslation();
 
   return (
-    <section className="bg-slate-50 py-24 md:py-28 dark:bg-slate-900/50">
-      <div className="mx-auto w-full max-w-[1200px] px-6">
+    <section className="bg-slate-50 pt-20 pb-16 md:py-28 dark:bg-slate-900/50">
+      <div className="mx-auto w-full max-w-300 px-6">
         <ProjectSectionIntro
           icon={<Target size={20} />}
           label={t<string>("projectsSection.objectives")}

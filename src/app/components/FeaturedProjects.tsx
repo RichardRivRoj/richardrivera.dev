@@ -35,9 +35,9 @@ export function FeaturedProjects() {
   return (
     <section
       id="projects"
-      className="relative border-y border-slate-100 bg-white py-[120px] dark:border-slate-800/60 dark:bg-slate-900/50"
+      className="relative border-y border-slate-100 bg-white py-20 lg:py-24 dark:border-slate-800/60 dark:bg-slate-900/50"
     >
-      <div className="mx-auto w-full max-w-[1400px] px-6">
+      <div className="mx-auto w-full max-w-350 px-6">
         {/* ================================================= */}
         {/* SECTION HEADING                                   */}
         {/* ================================================= */}
@@ -96,7 +96,7 @@ export function FeaturedProjects() {
 
                 {/* Image overlay */}
 
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-80" />
+                <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-slate-950/50 via-transparent to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-80" />
 
                 {/* Project number */}
 

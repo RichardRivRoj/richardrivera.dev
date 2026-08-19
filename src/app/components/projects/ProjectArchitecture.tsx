@@ -18,8 +18,8 @@ export function ProjectArchitecture({ project }: ProjectArchitectureProps) {
   const { architecture } = project;
 
   return (
-    <section className="border-y border-slate-100 bg-white py-24 md:py-28 dark:border-slate-800/60 dark:bg-slate-950">
-      <div className="mx-auto w-full max-w-[1200px] px-6">
+    <section className="border-y border-slate-100 bg-white py-20 lg:py-24 md:py-28 dark:border-slate-800/60 dark:bg-slate-950">
+      <div className="mx-auto w-full max-w-300 px-6">
         <ProjectSectionIntro
           icon={<Layers3 size={20} />}
           label={t<string>("projectsSection.architecture")}
