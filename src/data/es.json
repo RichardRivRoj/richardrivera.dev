@@ -366,5 +366,54 @@
   "general": {
     "viewProject": "Ver más",
     "back": "Regresar"
+  },
+  "contact": {
+    "title": "Ponte en Contacto",
+    "subtitle": "Contacto",
+    "description": "¿Te interesa colaborar, contratarme, desarrollar proyectos de investigación académica o realizar consultorías educativas? Envíame un mensaje.",
+
+    "info": {
+      "title": "Información de Contacto",
+      "description": "Puedes comunicarte directamente conmigo a través de mis redes profesionales o descargar mi CV completo para conocer más sobre mi experiencia.",
+      "email": "Correo electrónico",
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "instagram": "Instagram",
+      "downloadCv": "Descargar CV (PDF)"
+    },
+
+    "form": {
+      "title": "Enviar un Mensaje",
+
+      "name": {
+        "label": "Nombre",
+        "placeholder": "Tu nombre"
+      },
+
+      "email": {
+        "label": "Correo electrónico",
+        "placeholder": "Tu correo electrónico"
+      },
+
+      "subject": {
+        "label": "Asunto",
+        "placeholder": "Asunto del mensaje"
+      },
+
+      "message": {
+        "label": "Mensaje",
+        "placeholder": "Escribe los detalles de tu mensaje..."
+      },
+
+      "submit": "Enviar Mensaje",
+      "sending": "Enviando mensaje...",
+
+      "success": {
+        "title": "¡Mensaje Enviado!",
+        "description": "Gracias por escribirme. Revisaré tu mensaje y responderé lo antes posible.",
+        "another": "Enviar otro mensaje"
+      }
+    }
   }
+
 }

@@ -378,5 +378,53 @@
   "general": {
     "viewProject": "See more",
     "back": "Go back"
-  }
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Contact",
+    "description": "Interested in collaborating, hiring, academic research pipelines, or educational consultancies? Send a message.",
+
+    "info": {
+      "title": "Contact Information",
+      "description": "Feel free to reach out directly through my social coordinates or download my full CV for review.",
+      "email": "Email",
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "instagram": "Instagram",
+      "downloadCv": "Download CV (PDF)"
+    },
+
+    "form": {
+      "title": "Send a Message",
+
+      "name": {
+        "label": "Name",
+        "placeholder": "Your name"
+      },
+
+      "email": {
+        "label": "Email",
+        "placeholder": "Your email address"
+      },
+
+      "subject": {
+        "label": "Subject",
+        "placeholder": "Message subject"
+      },
+
+      "message": {
+        "label": "Message",
+        "placeholder": "Write your message details..."
+      },
+
+      "submit": "Send Message",
+      "sending": "Sending message...",
+
+      "success": {
+        "title": "Message Sent!",
+        "description": "Thank you for writing. I will review your message and reply as soon as possible.",
+        "another": "Send another message"
+        }
+      }
+    }
 }
