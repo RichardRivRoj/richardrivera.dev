@@ -165,6 +165,7 @@
   "title": "Technology Stack",
   "description": "Technologies and tools I use to design, develop, deploy, and maintain robust software solutions."
 },
+
 "projects": [
   {
     "id": "hcm-system",
@@ -373,7 +374,7 @@
   "contact": {
     "title": "Get In Touch",
     "subtitle": "Contact",
-    "description": "Interested in collaborating, hiring, academic research pipelines, or educational consultancies? Send a message.",
+    "description": "Looking for a full stack developer for your team or project? I can help with software development, web architecture, API integrations, frontend and backend. Also available for educational consulting. Send me a message.",
 
     "info": {
       "label": "01 — Contact",
@@ -419,5 +420,42 @@
         "another": "Send another message"
         }
       }
-    }
+  },
+  "footer": {
+  "brand": {
+    "statementStart": "Let's build something",
+    "statementHighlight": "meaningful",
+    "statementEnd": ".",
+    "description": "Systems Engineer & Full Stack Developer"
+  },
+
+  "availability": "Available for opportunities",
+
+  "navigation": {
+    "title": "Explore",
+    "about": "About",
+    "experience": "Experience",
+    "technology": "Technology",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+
+  "connect": {
+    "title": "Connect",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "instagram": "Instagram"
+  },
+
+  "stack": {
+    "title": "Built with"
+  },
+
+  "bottom": {
+    "copyright": "All rights reserved.",
+    "builtWith": "Designed & developed with Next.js, Tailwind CSS & Motion.",
+    "backToTop": "Back to top"
+  }
+}
 }
