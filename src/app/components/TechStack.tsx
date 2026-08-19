@@ -219,10 +219,10 @@ export function TechStack() {
   return (
     <>
       <section
-        id="techstack"
+        id="technology"
         className="relative isolate flex w-full flex-col overflow-hidden border-y border-slate-200/70 bg-slate-50 dark:border-slate-800/70 dark:bg-slate-950"
       >
-        <div className="mx-auto w-full max-w-[1400px] px-6 pt-12 md:pt-16">
+        <div className="mx-auto w-full max-w-[1400px] px-6 pt-16 md:pt-22">
           <SectionHeading
             title={section.title}
             subtitle={section.subtitle}

@@ -172,8 +172,8 @@
     "description": "Sistema integral de Gestión de Capital Humano diseñado para optimizar, evaluar y automatizar los procesos administrativos de la Universidad de Margarita.",
     "technologies": [
       "Next.js",
-      "Django",
-      "PostgreSQL",
+      "Laravel",
+      "MySQL",
       "Tailwind CSS"
     ],
     "thumbnail": "/projects/hcm_system.png",
@@ -182,6 +182,22 @@
 ],
 
 "projectsSection": {
+  "sectionOne": "Descripción del Proyecto",
+  "problem": "El problema",
+  "solution": "La Solución",
+  "objectives": "Objetivos",
+  "goals": "Metas de Ingeniería",
+  "architecture": "Arquitectura del Sistema",
+  "features": "Características",
+  "capabilities": "Capacidades Principales del Sistema",
+  "stack": "Tecnologías Utilizadas",
+  "technology": "Arquitectura Tecnológica",
+  "documentation": "Documentación visual",
+  "interface": "Interfaz del sistema",
+  "visualDocumentation": "Documentación Visual",
+  "systemInterface": "Interfaz del Sistema",
+  "result": "Resultados",
+
   "subtitle": "Portafolio de Ingeniería",
   "title": "Proyectos Destacados",
   "description": "Una selección de sistemas de software, proyectos de investigación, simulaciones y tecnologías educativas diseñadas para resolver problemas reales."
@@ -189,19 +205,17 @@
 "projectDetails": {
   "hcm-system": {
     "overview": {
-      "label": "Descripción del Proyecto",
       "title": "Sistema de Gestión de Capital Humano",
-      "description": "Plataforma integral de Gestión de Capital Humano desarrollada para optimizar los procesos administrativos de la Dirección de Talento Humano de la Universidad de Margarita."
+      "description": "Plataforma integral de Gestión de Capital Humano desarrollada para optimizar los procesos administrativos de la Dirección de Talento Humano de la Universidad de Margarita.",
+      "heroImage": "/projects/hcm_system.png"
     },
 
     "problem": {
-      "label": "El Problema",
       "title": "Un entorno administrativo complejo",
       "description": "La Dirección de Talento Humano gestionaba diversos procesos mediante flujos de trabajo fragmentados, documentación manual y fuentes de información desconectadas. Esta situación incrementaba los tiempos de procesamiento, generaba duplicidad de información y dificultaba la obtención de datos confiables para la toma de decisiones."
     },
 
     "solution": {
-      "label": "La Solución",
       "title": "Un ecosistema HCM centralizado",
       "description": "El proyecto plantea una plataforma web centralizada que integra los procesos de Talento Humano en un entorno digital unificado, permitiendo gestionar la información de manera consistente y proporcionando herramientas para monitoreo, evaluación, generación de reportes y toma de decisiones."
     },
@@ -222,10 +236,9 @@
     ],
 
     "architecture": {
-      "label": "Arquitectura del Sistema",
       "title": "Una arquitectura full-stack modular",
       "description": "La plataforma utiliza una arquitectura modular que separa las capas de presentación, lógica de aplicación, servicios API y persistencia de datos.",
-      "diagram": "/projects/hcm-system/architecture.png"
+      "diagram": "/projects/hcm-system/system-architecture.png"
     },
 
     "features": [
@@ -252,7 +265,6 @@
     ],
 
     "technologies": {
-      "label": "Tecnologías Utilizadas",
       "frontend": [
         "Next.js",
         "React",
@@ -270,50 +282,67 @@
       "tools": [
         "Git",
         "GitHub",
-        "Docker"
+        "Docker",
+        "Postman"
       ]
     },
 
-    "gallery": [
+    "gallery": {
+      "description": "Explora demostraciones interactivas de los principales módulos y flujos de trabajo implementados en el sistema.",
+      "visual": [
       {
-        "src": "/projects/hcm-system/dashboard.png",
-        "alt": "Panel principal del sistema HCM",
-        "caption": "Panel principal del sistema"
+        "type": "video",
+        "src": "/projects/hcm-system/panel-demo.mp4",
+        "poster": "/projects/hcm-system/panel.png",
+        "alt": "Demostración del panel inicial del sistema HCM",
+        "caption": "Visualización de la página principal de la universidad de Margarita."
       },
       {
-        "src": "/projects/hcm-system/personnel.png",
-        "alt": "Módulo de gestión de personal",
-        "caption": "Módulo de gestión de personal"
+        "type": "video",
+        "src": "/projects/hcm-system/dashboard-demo.mp4",
+        "poster": "/projects/hcm-system/dashboard.png",
+        "alt": "Demostración del dashboard del sistema HCM",
+        "caption": "Panel principal mostrando indicadores clave de personal y procesos administrativos."
       },
       {
-        "src": "/projects/hcm-system/recruitment.png",
-        "alt": "Módulo de reclutamiento",
-        "caption": "Flujo de gestión de reclutamiento"
+        "type": "video",
+        "src": "/projects/hcm-system/personnel-demo.mp4",
+        "poster": "/projects/hcm-system/personnel.png",
+        "alt": "Demostración del módulo de gestión de personal",
+        "caption": "Flujo para crear, consultar y actualizar información de los empleados."
       },
       {
-        "src": "/projects/hcm-system/evaluation.png",
-        "alt": "Módulo de evaluación de desempeño",
-        "caption": "Interfaz de evaluación de desempeño"
+        "type": "video",
+        "src": "/projects/hcm-system/recruitment-demo.mp4",
+        "poster": "/projects/hcm-system/recruitment.png",
+        "alt": "Demostración del módulo de reclutamiento",
+        "caption": "Flujo de reclutamiento para gestionar vacantes e información de candidatos."
+      },
+      {
+        "type": "video",
+        "src": "/projects/hcm-system/evaluation-demo.mp4",
+        "poster": "/projects/hcm-system/evaluation.png",
+        "alt": "Demostración del módulo de evaluación del desempeño",
+        "caption": "Interfaz de evaluación del desempeño y flujo de seguimiento."
+      },
+      {
+        "type": "video",
+        "src": "/projects/hcm-system/training-demo.mp4",
+        "poster": "/projects/hcm-system/training.png",
+        "alt": "Demostración del módulo de desarrollo y capacitación",
+        "caption": "Proceso de seguimiento y planificación de programas de capacitación."
       }
-    ],
-
-    "videos": [
-      {
-        "title": "Demostración del Sistema",
-        "description": "Recorrido audiovisual por los principales procesos y funcionalidades de la plataforma.",
-        "url": ""
-      }
-    ],
+    ]
+  },
 
     "results": {
-      "label": "Resultados",
       "title": "De procesos fragmentados a un sistema integrado",
       "description": "El proyecto estableció una base tecnológica para centralizar los procesos de Talento Humano, mejorar la organización de la información, aumentar la visibilidad de los flujos de trabajo y facilitar el acceso a datos administrativos estructurados."
     },
 
     "links": {
       "github": "https://github.com/RichardRivRoj/hcm_unimar",
-      "live": "#"
+      "live": "https://youtu.be/f3VkdIzdyY4"
     }
   }
 },
@@ -333,5 +362,9 @@
       "linkedin": "https://linkedin.com/in/richard-rafael-rivera-rojas-a4b89b315",
       "cvUrl": "https://drive.google.com/file/d/1r08ic_V5jnK7Q8IzVumyCOOj_gna4AF0/view?usp=sharing"
     }
+  },
+  "general": {
+    "viewProject": "Ver más",
+    "back": "Regresar"
   }
 }

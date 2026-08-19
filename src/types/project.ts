@@ -1,10 +1,16 @@
-export interface Project {
-  id: string;
+export interface ProjectMedia {
+  type: "image" | "video" | "gif";
+  src: string;
+  poster?: string;
+  alt: string;
+  caption: string;
+}
+
+export interface ProjectVideo {
+  type: "local" | "youtube" | "vimeo";
+  url: string;
   title: string;
   description: string;
-  technologies: string[];
-  thumbnail: string;
-  featured?: boolean;
 }
 
 export interface ProjectObjective {
@@ -17,48 +23,37 @@ export interface ProjectFeature {
   description: string;
 }
 
-export interface ProjectGalleryItem {
-  src: string;
-  alt: string;
-  caption: string;
-}
-
-export interface ProjectVideo {
-  title: string;
-  description: string;
-  url: string;
-}
-
 export interface ProjectArchitecture {
-  label: string;
   title: string;
   description: string;
   diagram: string;
 }
 
 export interface ProjectTechnologies {
-  label: string;
   frontend: string[];
   backend: string[];
   database: string[];
   tools: string[];
 }
 
+export interface ProjectLinks {
+  github?: string;
+  live?: string;
+}
+
 export interface ProjectDetail {
   overview: {
-    label: string;
     title: string;
     description: string;
+    heroImage: string;
   };
 
   problem: {
-    label: string;
     title: string;
     description: string;
   };
 
   solution: {
-    label: string;
     title: string;
     description: string;
   };
@@ -71,18 +66,17 @@ export interface ProjectDetail {
 
   technologies: ProjectTechnologies;
 
-  gallery: ProjectGalleryItem[];
+  gallery: {
+    description: string;
+    visual: ProjectMedia[];
+  }
 
   videos: ProjectVideo[];
 
   results: {
-    label: string;
     title: string;
     description: string;
   };
 
-  links: {
-    github?: string;
-    live?: string;
-  };
+  links: ProjectLinks;
 }

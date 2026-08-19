@@ -172,8 +172,8 @@
     "description": "A comprehensive Human Capital Management system designed to optimize, evaluate, and automate administrative workflows at Universidad de Margarita.",
     "technologies": [
       "Next.js",
-      "Django",
-      "PostgreSQL",
+      "Laravel",
+      "MySQL",
       "Tailwind CSS"
     ],
     "thumbnail": "/projects/hcm_system.png",
@@ -182,6 +182,22 @@
 ],
 
 "projectsSection": {
+  "sectionOne": "Project Overview",
+  "problem": "The Problem",
+  "solution": "The Solution",
+  "objectives": "Objectives",
+  "goals": "Engineering goals",
+  "architecture": "System Architecture",
+  "features": "Features",
+  "capabilities": "Core system capabilities",
+  "stack": "Technology Stack",
+  "technology": "Technology architecture",
+  "documentation": "Visual Documentation",
+  "interface": "System interface",
+  "visualDocumentation": "Visual Documentation",
+  "systemInterface": "System Interface",
+  "result": "Results",
+
   "subtitle": "Engineering Portfolio",
   "title": "Featured Projects",
   "description": "A selection of software systems, research projects, simulations, and educational technologies designed to solve real-world problems."
@@ -190,19 +206,17 @@
 "projectDetails": {
   "hcm-system": {
     "overview": {
-      "label": "Project Overview",
       "title": "Human Capital Management System",
-      "description": "A comprehensive Human Capital Management platform developed to optimize the administrative processes of the Human Resources Department at Universidad de Margarita."
+      "description": "A comprehensive Human Capital Management platform developed to optimize the administrative processes of the Human Resources Department at Universidad de Margarita.",
+      "heroImage": "/projects/hcm_system.png"
     },
 
     "problem": {
-      "label": "The Problem",
       "title": "A complex administrative environment",
       "description": "The Human Resources Department handled several processes through fragmented workflows, manual documentation, and disconnected information sources. This increased processing times, duplicated information, and made it difficult to obtain reliable data for decision-making."
     },
 
     "solution": {
-      "label": "The Solution",
       "title": "A centralized HCM ecosystem",
       "description": "The project proposes a centralized web platform that integrates Human Resources processes into a unified digital environment, allowing information to be managed consistently while providing administrators with tools for monitoring, evaluation, reporting, and decision-making."
     },
@@ -223,10 +237,9 @@
     ],
 
     "architecture": {
-      "label": "System Architecture",
       "title": "A modular full-stack architecture",
       "description": "The platform follows a modular architecture that separates the presentation, application logic, API services, and data persistence layers.",
-      "diagram": "/projects/hcm-system/architecture.png"
+      "diagram": "/projects/hcm-system/system-architecture.png"
     },
 
     "features": [
@@ -253,56 +266,82 @@
     ],
 
     "technologies": {
-      "label": "Technology Stack",
       "frontend": [
         "Next.js",
         "React",
-        "TypeScript",
+        "JavaScript",
         "Tailwind CSS"
       ],
       "backend": [
-        "Django",
-        "Python",
+        "Laravel",
+        "PHP",
         "REST API"
       ],
       "database": [
-        "PostgreSQL"
+        "MySQL"
       ],
       "tools": [
         "Git",
         "GitHub",
-        "Docker"
+        "Docker",
+        "Postman"
       ]
     },
-
-    "gallery": [
-      {
-        "src": "/projects/hcm-system/dashboard.png",
-        "alt": "HCM System dashboard",
-        "caption": "Main system dashboard"
-      },
-      {
-        "src": "/projects/hcm-system/personnel.png",
-        "alt": "Personnel management module",
-        "caption": "Personnel management module"
-      },
-      {
-        "src": "/projects/hcm-system/recruitment.png",
-        "alt": "Recruitment module",
-        "caption": "Recruitment management workflow"
-      },
-      {
-        "src": "/projects/hcm-system/evaluation.png",
-        "alt": "Performance evaluation module",
-        "caption": "Performance evaluation interface"
+  
+  "gallery": {
+    "description": "Explore interactive demonstrations of the main modules and workflows implemented in the system.",
+    "visual": [
+    {
+      "type": "video",
+      "src": "/projects/hcm-system/panel-demo.mp4",
+      "poster": "/projects/hcm-system/panel.png",
+      "alt": "Demonstration of the HCM system's initial dashboard",
+      "caption": "View of the Margarita University homepage."
+    },
+    {
+      "type": "video",
+      "src": "/projects/hcm-system/dashboard-demo.mp4",
+      "poster": "/projects/hcm-system/dashboard.png",
+      "alt": "HCM System dashboard demonstration",
+      "caption": "Main dashboard showing key personnel and administrative indicators."
+    },
+    {
+      "type": "video",
+      "src": "/projects/hcm-system/personnel-demo.mp4",
+      "poster": "/projects/hcm-system/personnel.png",
+      "alt": "Personnel management module demonstration",
+      "caption": "Workflow for creating, viewing, and updating employee information."
+    },
+    {
+      "type": "video",
+      "src": "/projects/hcm-system/recruitment-demo.mp4",
+      "poster": "/projects/hcm-system/recruitment.png",
+      "alt": "Recruitment module demonstration",
+      "caption": "Recruitment workflow for managing vacancies and candidate information."
+    },
+    {
+      "type": "video",
+      "src": "/projects/hcm-system/evaluation-demo.mp4",
+      "poster": "/projects/hcm-system/evaluation.png",
+      "alt": "Performance evaluation module demonstration",
+      "caption": "Performance evaluation interface and monitoring workflow."
+    },
+    {
+        "type": "video",
+        "src": "/projects/hcm-system/training-demo.mp4",
+        "poster": "/projects/hcm-system/training.png",
+        "alt": "Demonstration of the development and training module",
+        "caption": "Training program planning and monitoring process."
       }
-    ],
+  ]
+},
 
     "videos": [
       {
-        "title": "System Demonstration",
-        "description": "A walkthrough demonstrating the main workflows and capabilities of the platform.",
-        "url": ""
+        "type": "youtube",
+        "url": "https://youtu.be/f3VkdIzdyY4",
+        "title": "Complete System Demonstration",
+        "description": "A complete walkthrough of the main modules and workflows implemented in the Human Capital Management platform."
       }
     ],
 
@@ -313,8 +352,8 @@
     },
 
     "links": {
-      "github": "#",
-      "live": "#"
+      "github": "https://github.com/RichardRivRoj/hcm_unimar",
+      "live": "https://youtu.be/f3VkdIzdyY4"
     }
   }
 },
@@ -332,7 +371,12 @@
       "email": "rojasrichard2508@gmail.com",
       "github": "https://github.com/RichardRivRoj",
       "linkedin": "https://linkedin.com/in/richard-rafael-rivera-rojas-a4b89b315",
+      "instagram": "https://www.instagram.com/rrrrojasr/",
       "cvUrl": "https://drive.google.com/file/d/1r08ic_V5jnK7Q8IzVumyCOOj_gna4AF0/view?usp=sharing"
     }
+  },
+  "general": {
+    "viewProject": "See more",
+    "back": "Go back"
   }
 }
