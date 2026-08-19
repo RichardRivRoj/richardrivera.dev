@@ -336,15 +336,6 @@
   ]
 },
 
-    "videos": [
-      {
-        "type": "youtube",
-        "url": "https://youtu.be/f3VkdIzdyY4",
-        "title": "Complete System Demonstration",
-        "description": "A complete walkthrough of the main modules and workflows implemented in the Human Capital Management platform."
-      }
-    ],
-
     "results": {
       "label": "Results",
       "title": "From fragmented processes to an integrated system",
@@ -385,6 +376,7 @@
     "description": "Interested in collaborating, hiring, academic research pipelines, or educational consultancies? Send a message.",
 
     "info": {
+      "label": "01 — Contact",
       "title": "Contact Information",
       "description": "Feel free to reach out directly through my social coordinates or download my full CV for review.",
       "email": "Email",
@@ -395,6 +387,7 @@
     },
 
     "form": {
+      "label": "02 — Message",
       "title": "Send a Message",
 
       "name": {

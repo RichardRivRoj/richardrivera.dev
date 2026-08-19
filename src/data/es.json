@@ -64,7 +64,7 @@
     "year": "2026",
     "role": "Docente de Educación STEAM",
     "organization": "Unidad Educativa Roraima",
-    "description": "Enseñé asignaturas STEAM a estudiantes de educación básica mediante proyectos interdisciplinarios que integran ciencia, tecnología, ingeniería, arte y matemáticas. Diseñé actividades de robótica y electrónica con Arduino y Tinkercad, y lideré iniciativas de aprendizaje basado en proyectos vinculados a la culture, el medioambiente y el emprendimiento.",
+    "description": "Enseñé asignaturas STEAM a estudiantes de educación básica mediante proyectos interdisciplinarios que integran ciencia, tecnología, ingeniería, arte y matemáticas. Diseñé actividades de robótica y electrónica con Arduino y Tinkercad, y lideré iniciativas de aprendizaje basado en proyectos vinculados a la cultura, el medioambiente y el emprendimiento.",
     "type": "education"
   },
   {
@@ -336,6 +336,7 @@
   },
 
     "results": {
+      "label": "Resultados",
       "title": "De procesos fragmentados a un sistema integrado",
       "description": "El proyecto estableció una base tecnológica para centralizar los procesos de Talento Humano, mejorar la organización de la información, aumentar la visibilidad de los flujos de trabajo y facilitar el acceso a datos administrativos estructurados."
     },
@@ -360,6 +361,7 @@
       "email": "rojasrichard2508@gmail.com",
       "github": "https://github.com/RichardRivRoj",
       "linkedin": "https://linkedin.com/in/richard-rafael-rivera-rojas-a4b89b315",
+      "instagram": "https://www.instagram.com/rrrrojasr/",
       "cvUrl": "https://drive.google.com/file/d/1r08ic_V5jnK7Q8IzVumyCOOj_gna4AF0/view?usp=sharing"
     }
   },
@@ -373,6 +375,7 @@
     "description": "¿Te interesa colaborar, contratarme, desarrollar proyectos de investigación académica o realizar consultorías educativas? Envíame un mensaje.",
 
     "info": {
+      "label": "01 — Contacto",
       "title": "Información de Contacto",
       "description": "Puedes comunicarte directamente conmigo a través de mis redes profesionales o descargar mi CV completo para conocer más sobre mi experiencia.",
       "email": "Correo electrónico",
@@ -383,6 +386,7 @@
     },
 
     "form": {
+      "label": "02 — Mensaje",
       "title": "Enviar un Mensaje",
 
       "name": {

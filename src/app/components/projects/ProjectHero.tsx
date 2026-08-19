@@ -25,7 +25,7 @@ export function ProjectHero({ project }: ProjectHeroProps) {
   ].filter((technology, index, array) => array.indexOf(technology) === index);
 
   return (
-    <section className="relative isolate overflow-hidden border-b border-slate-200/70 bg-slate-50 py-24 md:py-32 dark:border-slate-800/70 dark:bg-slate-950">
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-white pt-8 pb-16 dark:bg-slate-900">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"

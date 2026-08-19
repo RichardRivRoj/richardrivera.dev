@@ -1,11 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
-import { CheckCircle2, Send } from "lucide-react";
+import { CheckCircle2, Send, ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
 
 interface ContactFormProps {
   translations: {
+    label: string;
     title: string;
 
     name: {
@@ -55,9 +56,19 @@ const initialFormState: FormState = {
   message: "",
 };
 
+const fieldVariants = {
+  hidden: {
+    opacity: 0,
+    y: 14,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+  },
+};
+
 export function ContactForm({ translations }: ContactFormProps) {
   const [formState, setFormState] = useState<FormState>(initialFormState);
-
   const [status, setStatus] = useState<FormStatus>("idle");
 
   const handleChange = (
@@ -98,7 +109,17 @@ export function ContactForm({ translations }: ContactFormProps) {
 
   if (status === "success") {
     return (
-      <div className="flex flex-col items-center gap-4 py-12 text-center">
+      <motion.div
+        initial={{
+          opacity: 0,
+          y: 20,
+        }}
+        animate={{
+          opacity: 1,
+          y: 0,
+        }}
+        className="flex min-h-[420px] flex-col items-center justify-center text-center"
+      >
         <motion.div
           initial={{
             opacity: 0,
@@ -111,38 +132,60 @@ export function ContactForm({ translations }: ContactFormProps) {
           transition={{
             duration: 0.35,
           }}
-          className="mb-2 flex h-16 w-16 items-center justify-center rounded-full border border-emerald-100 bg-emerald-50 text-emerald-500 shadow-sm dark:border-emerald-900/30 dark:bg-emerald-950/30 dark:text-emerald-400"
+          className="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-50 text-emerald-500 dark:bg-emerald-950/30 dark:text-emerald-400"
         >
-          <CheckCircle2 size={32} />
+          <CheckCircle2 size={28} />
         </motion.div>
 
         <h3 className="font-display text-xl font-bold text-slate-900 dark:text-white">
           {translations.success.title}
         </h3>
 
-        <p className="max-w-sm text-sm leading-relaxed font-light text-slate-500 dark:text-slate-400">
+        <p className="mt-3 max-w-sm text-sm leading-7 font-light text-slate-500 dark:text-slate-400">
           {translations.success.description}
         </p>
 
         <button
           type="button"
           onClick={() => setStatus("idle")}
-          className="mt-4 rounded bg-slate-900 px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-slate-800 dark:bg-blue-600 dark:hover:bg-blue-500"
+          className="mt-7 text-xs font-bold text-blue-600 transition-colors hover:text-blue-500 dark:text-blue-400"
         >
           {translations.success.another}
         </button>
-      </div>
+      </motion.div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
-      <h3 className="font-display mb-4 text-xl font-bold text-slate-900 dark:text-white">
-        {translations.title}
-      </h3>
+    <motion.form
+      onSubmit={handleSubmit}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{
+        once: true,
+        amount: 0.15,
+      }}
+      transition={{
+        staggerChildren: 0.08,
+      }}
+      className="space-y-7"
+    >
+      {/* Heading */}
+      <motion.div variants={fieldVariants} className="mb-8">
+        <span className="font-display text-[10px] font-bold tracking-[0.2em] text-blue-600 uppercase dark:text-blue-500">
+          {translations.label}
+        </span>
+
+        <h3 className="font-display mt-3 text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
+          {translations.title}
+        </h3>
+      </motion.div>
 
       {/* Name + Email */}
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <motion.div
+        variants={fieldVariants}
+        className="grid grid-cols-1 gap-7 sm:grid-cols-2"
+      >
         <FormField
           id="name"
           name="name"
@@ -162,24 +205,26 @@ export function ContactForm({ translations }: ContactFormProps) {
           value={formState.email}
           onChange={handleChange}
         />
-      </div>
+      </motion.div>
 
       {/* Subject */}
-      <FormField
-        id="subject"
-        name="subject"
-        type="text"
-        label={translations.subject.label}
-        placeholder={translations.subject.placeholder}
-        value={formState.subject}
-        onChange={handleChange}
-      />
+      <motion.div variants={fieldVariants}>
+        <FormField
+          id="subject"
+          name="subject"
+          type="text"
+          label={translations.subject.label}
+          placeholder={translations.subject.placeholder}
+          value={formState.subject}
+          onChange={handleChange}
+        />
+      </motion.div>
 
       {/* Message */}
-      <div className="flex flex-col gap-1.5">
+      <motion.div variants={fieldVariants} className="flex flex-col gap-2">
         <label
           htmlFor="message"
-          className="font-display text-[10px] font-bold tracking-wider text-slate-400 uppercase dark:text-slate-500"
+          className="font-display text-[10px] font-bold tracking-[0.15em] text-slate-400 uppercase dark:text-slate-500"
         >
           {translations.message.label}
         </label>
@@ -192,26 +237,32 @@ export function ContactForm({ translations }: ContactFormProps) {
           value={formState.message}
           onChange={handleChange}
           placeholder={translations.message.placeholder}
-          className="w-full resize-none rounded border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-800 transition-colors outline-none focus:border-blue-500 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-100"
+          className="w-full resize-none border-b border-slate-200 bg-transparent px-0 py-3 text-sm text-slate-800 transition-colors outline-none placeholder:text-slate-300 focus:border-blue-500 dark:border-slate-700 dark:text-slate-100 dark:placeholder:text-slate-600"
         />
-      </div>
+      </motion.div>
 
       {/* Submit */}
-      <button
-        type="submit"
-        disabled={status === "sending"}
-        className="rounded-custom-sm bg-primary hover:bg-primary-hover flex w-full items-center justify-center gap-2 py-4 font-semibold text-white shadow transition-all duration-200 hover:shadow-md disabled:cursor-not-allowed disabled:opacity-50"
-      >
-        {status === "sending" ? (
-          translations.sending
-        ) : (
-          <>
-            {translations.submit}
-            <Send size={14} />
-          </>
-        )}
-      </button>
-    </form>
+      <motion.div variants={fieldVariants} className="pt-2">
+        <button
+          type="submit"
+          disabled={status === "sending"}
+          className="group rounded-custom-sm bg-primary hover:bg-primary-hover inline-flex w-full items-center justify-center gap-3 py-4 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto sm:min-w-[190px]"
+        >
+          {status === "sending" ? (
+            translations.sending
+          ) : (
+            <>
+              {translations.submit}
+
+              <ArrowRight
+                size={16}
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              />
+            </>
+          )}
+        </button>
+      </motion.div>
+    </motion.form>
   );
 }
 
@@ -241,10 +292,10 @@ function FormField({
   onChange,
 }: FormFieldProps) {
   return (
-    <div className="flex flex-col gap-1.5">
+    <div className="flex flex-col gap-2">
       <label
         htmlFor={id}
-        className="font-display text-[10px] font-bold tracking-wider text-slate-400 uppercase dark:text-slate-500"
+        className="font-display text-[10px] font-bold tracking-[0.15em] text-slate-400 uppercase dark:text-slate-500"
       >
         {label}
       </label>
@@ -257,7 +308,7 @@ function FormField({
         value={value}
         onChange={onChange}
         placeholder={placeholder}
-        className="w-full rounded border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-800 transition-colors outline-none focus:border-blue-500 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-100"
+        className="w-full border-b border-slate-200 bg-transparent px-0 py-3 text-sm text-slate-800 transition-colors outline-none placeholder:text-slate-300 focus:border-blue-500 dark:border-slate-700 dark:text-slate-100 dark:placeholder:text-slate-600"
       />
     </div>
   );

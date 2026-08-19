@@ -15,7 +15,7 @@ export function ProjectFeatures({ project }: ProjectFeaturesProps) {
   const { t } = useTranslation();
 
   return (
-    <section className="bg-slate-50 py-24 md:py-28 dark:bg-slate-900/50">
+    <section className="bg-slate-50 py-20 lg:py-24 md:py-28 dark:bg-slate-900/50">
       <div className="mx-auto w-full max-w-[1200px] px-6">
         <ProjectSectionIntro
           icon={<Code2 size={20} />}

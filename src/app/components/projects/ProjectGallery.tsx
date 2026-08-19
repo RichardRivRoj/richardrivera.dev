@@ -22,7 +22,7 @@ export function ProjectGallery({ project }: ProjectGalleryProps) {
   }
 
   return (
-    <section className="bg-slate-50 py-24 md:py-28 dark:bg-slate-900/50">
+    <section className="bg-slate-50 pt-20 pb-16 dark:bg-slate-900/50">
       <div className="mx-auto w-full max-w-[1400px] px-6">
         <ProjectSectionIntro
           icon={<ArrowUpRight size={20} />}

@@ -1,12 +1,14 @@
 "use client";
 
 import React from "react";
-import { SectionHeading } from "@/components/ui/SectionHeading";
+import { motion } from "motion/react";
 
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { useTranslation } from "@/hooks/useTranslation";
 
 import { ContactInfo } from "./contact/ContactInfo";
 import { ContactForm } from "./contact/ContactForm";
+import { label } from "motion/react-client";
 
 export function Contact() {
   const { t } = useTranslation();
@@ -36,6 +38,7 @@ export function Contact() {
   };
 
   const info = {
+    label: t<string>("contact.info.label"),
     title: t<string>("contact.info.title"),
     description: t<string>("contact.info.description"),
     email: t<string>("contact.info.email"),
@@ -46,6 +49,7 @@ export function Contact() {
   };
 
   const form = {
+    label: t<string>("contact.form.label"),
     title: t<string>("contact.form.title"),
 
     name: {
@@ -81,44 +85,62 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="
-        border-t
-        border-slate-100
-        bg-slate-50
-        py-[120px]
-        dark:border-slate-800/60
-        dark:bg-slate-900/50
-      "
+      className="border-t border-slate-100 bg-slate-50 py-20 lg:py-24 dark:border-slate-800/60 dark:bg-slate-900/50"
     >
       <div className="mx-auto w-full max-w-[1400px] px-6">
         {/* ================================================= */}
         {/* SECTION HEADER                                    */}
         {/* ================================================= */}
 
-        <SectionHeading
-          title={section.title}
-          subtitle={section.subtitle}
-          description={section.description}
-        />
-
-        {/* ================================================= */}
-        {/* CONTENT                                           */}
-        {/* ================================================= */}
-
-        <div
-          className="
-            mx-auto
-            grid
-            max-w-5xl
-            grid-cols-1
-            items-stretch
-            gap-12
-            lg:grid-cols-12
-          "
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 20,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.2,
+          }}
         >
-          {/* Contact information */}
+          <SectionHeading
+            title={section.title}
+            subtitle={section.subtitle}
+            description={section.description}
+          />
+        </motion.div>
 
-          <div className="lg:col-span-5">
+        {/* ================================================= */}
+        {/* CONTACT CONTENT                                   */}
+        {/* ================================================= */}
+
+        <div className="mx-auto mt-16 grid max-w-6xl grid-cols-1 gap-16 lg:grid-cols-12 lg:gap-20">
+          {/* ================================================= */}
+          {/* CONTACT INFORMATION                               */}
+          {/* ================================================= */}
+
+          <motion.div
+            initial={{
+              opacity: 0,
+              x: -20,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.15,
+            }}
+            transition={{
+              duration: 0.5,
+              ease: "easeOut",
+            }}
+            className="lg:col-span-5"
+          >
             <ContactInfo
               email={email}
               github={github}
@@ -127,28 +149,34 @@ export function Contact() {
               cvUrl={cvUrl}
               translations={info}
             />
-          </div>
+          </motion.div>
 
-          {/* Contact form */}
+          {/* ================================================= */}
+          {/* CONTACT FORM                                     */}
+          {/* ================================================= */}
 
-          <div
-            className="
-              flex
-              flex-col
-              justify-center
-              rounded-custom-lg
-              border
-              border-slate-200/60
-              bg-white
-              p-8
-              shadow-sm
-              dark:border-slate-700/60
-              dark:bg-slate-800
-              lg:col-span-7
-            "
+          <motion.div
+            initial={{
+              opacity: 0,
+              x: 20,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.15,
+            }}
+            transition={{
+              duration: 0.5,
+              delay: 0.1,
+              ease: "easeOut",
+            }}
+            className="lg:col-span-7"
           >
             <ContactForm translations={form} />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -16,7 +16,7 @@ export function ProjectFooter({ project }: ProjectFooterProps) {
   const { links } = project;
 
   return (
-    <section className="border-t border-slate-200 bg-white py-16 dark:border-slate-800 dark:bg-slate-950">
+    <section className="border-t border-slate-200 bg-white py-2 pt-14 pb-2 md:py-2 md:pb-2 md:pt-10 dark:border-slate-800 dark:bg-slate-950">
       <div className="mx-auto flex max-w-[1200px] flex-col items-center justify-between gap-6 px-6 sm:flex-row">
         <Link
           href="/#projects"
