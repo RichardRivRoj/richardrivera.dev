@@ -222,7 +222,7 @@ export function TechStack() {
         id="technology"
         className="relative isolate flex w-full flex-col overflow-hidden border-y border-slate-200/70 bg-slate-50 dark:border-slate-800/70 dark:bg-slate-950"
       >
-        <div className="mx-auto w-full max-w-[1400px] px-6 pt-16 md:pt-22">
+        <div className="mx-auto w-full max-w-350 px-6 pt-16 md:pt-22">
           <SectionHeading
             title={section.title}
             subtitle={section.subtitle}
@@ -240,13 +240,13 @@ export function TechStack() {
           className="pointer-events-none absolute inset-0 -z-20 overflow-hidden"
         >
           {/* Light mode */}
-          <div className="absolute top-1/2 left-1/2 h-[500px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-400/[0.04] blur-[130px] dark:hidden" />
+          <div className="absolute top-1/2 left-1/2 h-125 w-225 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-400/4 blur-[130px] dark:hidden" />
 
           {/* Dark mode central nebula */}
-          <div className="absolute top-1/2 left-1/2 hidden h-[650px] w-[1100px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-600/[0.08] blur-[150px] dark:block" />
+          <div className="absolute top-1/2 left-1/2 hidden h-162.5 w-275 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-600/8 blur-[150px] dark:block" />
 
           {/* Purple atmosphere */}
-          <div className="absolute top-[-20%] right-[-15%] hidden h-[500px] w-[600px] rounded-full bg-purple-600/[0.07] blur-[150px] dark:block" />
+          <div className="absolute top-[-20%] right-[-15%] hidden h-125 w-150 rounded-full bg-purple-600/[0.07] blur-[150px] dark:block" />
         </div>
 
         {/* ================================================= */}
@@ -281,19 +281,19 @@ export function TechStack() {
           {/* Central atmospheric glow */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute top-1/2 left-1/2 z-0 h-[250px] w-[1000px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/[0.03] blur-[100px] dark:bg-blue-500/[0.08]"
+            className="pointer-events-none absolute top-1/2 left-1/2 z-0 h-62.5 w-250 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/3 blur-[100px] dark:bg-blue-500/8"
           />
 
           {/* Left fade */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute top-0 left-0 z-20 h-full w-16 bg-gradient-to-r from-slate-50 to-transparent md:w-40 dark:from-slate-950"
+            className="pointer-events-none absolute top-0 left-0 z-20 h-full w-16 bg-linear-to-r from-slate-50 to-transparent md:w-40 dark:from-slate-950"
           />
 
           {/* Right fade */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute top-0 right-0 z-20 h-full w-16 bg-gradient-to-l from-slate-50 to-transparent md:w-40 dark:from-slate-950"
+            className="pointer-events-none absolute top-0 right-0 z-20 h-full w-16 bg-linear-to-l from-slate-50 to-transparent md:w-40 dark:from-slate-950"
           />
 
           {/* ================================================= */}

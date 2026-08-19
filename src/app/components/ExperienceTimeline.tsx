@@ -70,7 +70,7 @@ export function ExperienceTimeline() {
 
   return (
     <section id="experience" className="bg-white py-20 lg:py-24 dark:bg-slate-900">
-      <div className="mx-auto w-full max-w-[1400px] px-6">
+      <div className="mx-auto w-full max-w-350 px-6">
         <SectionHeading
           subtitle={section.subtitle}
           title={section.title}

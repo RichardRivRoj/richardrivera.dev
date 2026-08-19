@@ -118,7 +118,7 @@ export function ContactForm({ translations }: ContactFormProps) {
           opacity: 1,
           y: 0,
         }}
-        className="flex min-h-[420px] flex-col items-center justify-center text-center"
+        className="flex min-h-105 flex-col items-center justify-center text-center"
       >
         <motion.div
           initial={{
@@ -246,7 +246,7 @@ export function ContactForm({ translations }: ContactFormProps) {
         <button
           type="submit"
           disabled={status === "sending"}
-          className="group rounded-custom-sm bg-primary hover:bg-primary-hover inline-flex w-full items-center justify-center gap-3 py-4 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto sm:min-w-[190px]"
+          className="group rounded-custom-sm bg-primary hover:bg-primary-hover inline-flex w-full items-center justify-center gap-3 py-4 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto sm:min-w-47.5"
         >
           {status === "sending" ? (
             translations.sending

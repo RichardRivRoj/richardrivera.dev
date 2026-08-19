@@ -120,12 +120,12 @@ export function Hero() {
     >
       {/* Background soft gradients */}
       <div className="pointer-events-none absolute inset-0 z-0 opacity-40 dark:opacity-30">
-        <div className="absolute top-1/4 left-1/4 h-[300px] w-[300px] rounded-full bg-blue-300 blur-[100px] dark:bg-blue-900" />
+        <div className="absolute top-1/4 left-1/4 h-75 w-75 rounded-full bg-blue-300 blur-[100px] dark:bg-blue-900" />
 
-        <div className="absolute right-1/4 bottom-1/4 h-[250px] w-[250px] rounded-full bg-indigo-200 blur-[100px] dark:bg-indigo-900" />
+        <div className="absolute right-1/4 bottom-1/4 h-62.5 w-62.5 rounded-full bg-indigo-200 blur-[100px] dark:bg-indigo-900" />
       </div>
 
-      <div className="z-10 mx-auto w-full max-w-[1400px] px-6">
+      <div className="z-10 mx-auto w-full max-w-350 px-6">
         <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-12">
           {/* Left Column: Portrait */}
           <motion.div
@@ -143,7 +143,7 @@ export function Hero() {
             }}
             className="col-span-1 flex justify-center md:col-span-5 md:justify-start"
           >
-            <div className="rounded-custom-lg relative h-[340px] w-[280px] overflow-hidden border border-slate-200/80 shadow-md sm:h-[420px] sm:w-[320px] md:h-[500px] md:w-[400px] lg:h-[450px] lg:w-[400px] dark:border-slate-800">
+            <div className="rounded-custom-lg relative h-85 w-70 overflow-hidden border border-slate-200/80 shadow-md sm:h-105 sm:w-[320px] md:h-125 md:w-100 lg:h-112.5 lg:w-100 dark:border-slate-800">
               <Image
                 src="/ing-RR.jpg"
                 alt={name}
@@ -153,7 +153,7 @@ export function Hero() {
                 sizes="(max-width: 768px) 320px, 420px"
               />
 
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-transparent" />
+              <div className="pointer-events-none absolute inset-0 bg-linar-to-t from-slate-950/20 via-transparent to-transparent" />
             </div>
           </motion.div>
 
@@ -185,7 +185,7 @@ export function Hero() {
               <span className="text-primary">
                 {displayedLastName}
                 <span
-                  className="typewriter-cursor traslate-y-[0.08em] bg-primary ml-1 inline-block h-[0.9em] w-[3px] animate-pulse align-middle"
+                  className="typewriter-cursor traslate-y-[0.08em] bg-primary ml-1 inline-block h-[0.9em] w-0.75 animate-pulse align-middle"
                   aria-hidden="true"
                 />
               </span>

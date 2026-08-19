@@ -18,7 +18,7 @@ export function ProjectTechnologies({ project }: ProjectTechnologiesProps) {
 
   return (
     <section className="border-y border-slate-100 bg-white pt-20 pb-16 md:py-28 dark:border-slate-800/60 dark:bg-slate-950">
-      <div className="mx-auto w-full max-w-[1200px] px-6">
+      <div className="mx-auto w-full max-w-300 px-6">
         <ProjectSectionIntro
           icon={<Server size={20} />}
           label={t<string>("projectsSection.stack")}

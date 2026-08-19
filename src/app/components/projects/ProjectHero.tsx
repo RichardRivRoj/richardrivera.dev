@@ -30,12 +30,12 @@ export function ProjectHero({ project }: ProjectHeroProps) {
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
       >
-        <div className="absolute top-0 left-1/2 h-[500px] w-[900px] -translate-x-1/2 rounded-full bg-blue-500/10 blur-[140px] dark:bg-blue-600/10" />
+        <div className="absolute top-0 left-1/2 h-125 w-225 -translate-x-1/2 rounded-full bg-blue-500/10 blur-[140px] dark:bg-blue-600/10" />
 
-        <div className="absolute right-[-10%] bottom-[-30%] h-[450px] w-[450px] rounded-full bg-indigo-500/10 blur-[130px] dark:bg-purple-600/10" />
+        <div className="absolute right-[-10%] bottom-[-30%] h-112.5 w-112.5 rounded-full bg-indigo-500/10 blur-[130px] dark:bg-purple-600/10" />
       </div>
 
-      <div className="mx-auto w-full max-w-[1400px] px-6">
+      <div className="mx-auto w-full max-w-350 px-6">
         <motion.div
           initial={{ opacity: 0, x: -15 }}
           animate={{ opacity: 1, x: 0 }}

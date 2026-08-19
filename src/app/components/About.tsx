@@ -39,7 +39,7 @@ export function About() {
       id="about"
       className="border-y border-slate-100 bg-slate-50 py-20 lg:py-24 dark:border-slate-800/60 dark:bg-slate-900/50"
     >
-      <div className="mx-auto w-full max-w-[1400px] px-6">
+      <div className="mx-auto w-full max-w-350 px-6">
         <SectionHeading
           title={title}
           subtitle={about}
@@ -47,7 +47,7 @@ export function About() {
         />
 
         {/* Bio & Philosophy Block */}
-        <div className="mx-auto mb-16 flex max-w-[800px] flex-col gap-6 text-center font-sans md:text-left">
+        <div className="mx-auto mb-16 flex max-w-200 flex-col gap-6 text-center font-sans md:text-left">
           <p className="text-lg leading-relaxed font-light text-slate-700 dark:text-slate-300">
             {bio}
           </p>

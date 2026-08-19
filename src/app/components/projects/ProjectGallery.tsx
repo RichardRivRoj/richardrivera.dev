@@ -23,7 +23,7 @@ export function ProjectGallery({ project }: ProjectGalleryProps) {
 
   return (
     <section className="bg-slate-50 pt-20 pb-16 dark:bg-slate-900/50">
-      <div className="mx-auto w-full max-w-[1400px] px-6">
+      <div className="mx-auto w-full max-w-350 px-6">
         <ProjectSectionIntro
           icon={<ArrowUpRight size={20} />}
           label={t<string>("projectsSection.documentation")}
