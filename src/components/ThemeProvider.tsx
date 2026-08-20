@@ -40,24 +40,24 @@ function applyTheme(theme: "light" | "dark") {
   root.style.colorScheme = theme;
 }
 
-export function ThemeProvider({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const [theme, setThemeState] = useState<Theme>("system");
-  const [resolvedTheme, setResolvedTheme] = useState<"light" | "dark">(
-    "light",
-  );
+export function ThemeProvider({ children }: { children: React.ReactNode }) {
+  // Inicialización lazy: lee localStorage y calcula el tema inicial
+  const [theme, setThemeState] = useState<Theme>(() => {
+    if (typeof window === "undefined") return "system";
 
-  /**
-   * Inicializa el tema almacenado o utiliza
-   * la preferencia del sistema.
-   */
-  useEffect(() => {
-    const storedTheme = localStorage.getItem(
-      THEME_STORAGE_KEY,
-    ) as Theme | null;
+    const storedTheme = localStorage.getItem(THEME_STORAGE_KEY) as Theme | null;
+
+    return storedTheme === "light" ||
+      storedTheme === "dark" ||
+      storedTheme === "system"
+      ? storedTheme
+      : "system";
+  });
+
+  const [resolvedTheme, setResolvedTheme] = useState<"light" | "dark">(() => {
+    if (typeof window === "undefined") return "light";
+
+    const storedTheme = localStorage.getItem(THEME_STORAGE_KEY) as Theme | null;
 
     const initialTheme: Theme =
       storedTheme === "light" ||
@@ -66,28 +66,23 @@ export function ThemeProvider({
         ? storedTheme
         : "system";
 
-    setThemeState(initialTheme);
+    return initialTheme === "system" ? getSystemTheme() : initialTheme;
+  });
 
-    const systemTheme = getSystemTheme();
-
-    const actualTheme =
-      initialTheme === "system" ? systemTheme : initialTheme;
-
-    setResolvedTheme(actualTheme);
-    applyTheme(actualTheme);
+  // Aplicar el tema al DOM solo una vez al montar (no llama setState)
+  useEffect(() => {
+    applyTheme(resolvedTheme);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   /**
    * Escucha cambios en la preferencia del sistema operativo.
+   * (Solo cuando el tema elegido es "system")
    */
   useEffect(() => {
-    const mediaQuery = window.matchMedia(
-      "(prefers-color-scheme: dark)",
-    );
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
-    const handleSystemThemeChange = (
-      event: MediaQueryListEvent,
-    ) => {
+    const handleSystemThemeChange = (event: MediaQueryListEvent) => {
       if (theme !== "system") {
         return;
       }
@@ -98,16 +93,10 @@ export function ThemeProvider({
       applyTheme(nextTheme);
     };
 
-    mediaQuery.addEventListener(
-      "change",
-      handleSystemThemeChange,
-    );
+    mediaQuery.addEventListener("change", handleSystemThemeChange);
 
     return () => {
-      mediaQuery.removeEventListener(
-        "change",
-        handleSystemThemeChange,
-      );
+      mediaQuery.removeEventListener("change", handleSystemThemeChange);
     };
   }, [theme]);
 
@@ -117,15 +106,9 @@ export function ThemeProvider({
   const setTheme = useCallback((nextTheme: Theme) => {
     setThemeState(nextTheme);
 
-    localStorage.setItem(
-      THEME_STORAGE_KEY,
-      nextTheme,
-    );
+    localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
 
-    const actualTheme =
-      nextTheme === "system"
-        ? getSystemTheme()
-        : nextTheme;
+    const actualTheme = nextTheme === "system" ? getSystemTheme() : nextTheme;
 
     setResolvedTheme(actualTheme);
     applyTheme(actualTheme);
@@ -133,15 +116,9 @@ export function ThemeProvider({
 
   /**
    * Alterna entre light y dark.
-   *
-   * Si actualmente está en "system",
-   * toma el tema resuelto como referencia.
    */
   const toggleTheme = useCallback(() => {
-    const nextTheme =
-      resolvedTheme === "light"
-        ? "dark"
-        : "light";
+    const nextTheme = resolvedTheme === "light" ? "dark" : "light";
 
     setTheme(nextTheme);
   }, [resolvedTheme, setTheme]);
@@ -164,9 +141,7 @@ export function useTheme() {
   const context = useContext(ThemeContext);
 
   if (!context) {
-    throw new Error(
-      "useTheme must be used within a ThemeProvider",
-    );
+    throw new Error("useTheme must be used within a ThemeProvider");
   }
 
   return context;

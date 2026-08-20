@@ -153,7 +153,7 @@ export function Hero() {
                 sizes="(max-width: 768px) 320px, 420px"
               />
 
-              <div className="pointer-events-none absolute inset-0 bg-linar-to-t from-slate-950/20 via-transparent to-transparent" />
+              <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-slate-950/20 via-transparent to-transparent" />
             </div>
           </motion.div>
 
@@ -210,7 +210,7 @@ export function Hero() {
               variants={itemVariants}
               className="max-w-xl font-sans text-lg leading-relaxed font-light text-slate-500 dark:text-slate-400"
             >
-              <span className="text-[13px] font-semibold md:text-[16px]">"{tagline}"</span>
+              <span className="text-[13px] font-semibold md:text-[16px]">&quot;{tagline}&quot;</span>
               <br />
               {description}
             </motion.p>

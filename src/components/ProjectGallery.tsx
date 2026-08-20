@@ -2,7 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-import { Play } from "lucide-react";
 import { motion } from "motion/react";
 
 export interface ProjectMedia {
