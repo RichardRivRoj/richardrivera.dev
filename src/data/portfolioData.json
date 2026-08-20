@@ -1,0 +1,23 @@
+{
+  "portfolioData": {
+  "personalInfo": {
+    "name": "Richard Rivera",
+    "socials": {
+      "email": "rojasrichard2508@gmail.com",
+      "github": "https://github.com/RichardRivRoj",
+      "linkedin": "https://linkedin.com/in/richard-rafael-rivera-rojas-a4b89b315",
+      "instagram": "https://www.instagram.com/rrrrojasr/",
+      "cvUrl": "https://drive.google.com/file/d/1r08ic_V5jnK7Q8IzVumyCOOj_gna4AF0/view?usp=sharing"
+    }
+  },
+  "footer": {
+    "technologies": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Motion"
+    ]
+  }
+}
+}

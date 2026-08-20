@@ -8,7 +8,6 @@ import { useTranslation } from "@/hooks/useTranslation";
 
 import { ContactInfo } from "./contact/ContactInfo";
 import { ContactForm } from "./contact/ContactForm";
-import { label } from "motion/react-client";
 
 export function Contact() {
   const { t } = useTranslation();
@@ -74,6 +73,7 @@ export function Contact() {
 
     submit: t<string>("contact.form.submit"),
     sending: t<string>("contact.form.sending"),
+    error: t<string>("contact.form.error"),
 
     success: {
       title: t<string>("contact.form.success.title"),

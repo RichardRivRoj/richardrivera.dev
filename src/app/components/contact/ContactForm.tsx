@@ -31,6 +31,7 @@ interface ContactFormProps {
 
     submit: string;
     sending: string;
+    error: string;
 
     success: {
       title: string;
@@ -71,6 +72,10 @@ export function ContactForm({ translations }: ContactFormProps) {
   const [formState, setFormState] = useState<FormState>(initialFormState);
   const [status, setStatus] = useState<FormStatus>("idle");
 
+  const [companyWebsite, setCompanyWebsite] = useState("");
+
+  const [formStartedAt] = useState(() => Date.now());
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
@@ -80,31 +85,45 @@ export function ContactForm({ translations }: ContactFormProps) {
       ...previous,
       [name]: value,
     }));
+    
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    if (status === "sending") {
+      return;
+    }
+
     setStatus("sending");
 
-    /*
-     * Actualmente simulamos el envío.
-     *
-     * Posteriormente puedes reemplazar este bloque por:
-     *
-     * await fetch("/api/contact", {
-     *   method: "POST",
-     *   headers: {
-     *     "Content-Type": "application/json",
-     *   },
-     *   body: JSON.stringify(formState),
-     * });
-     */
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formState,
+          companyWebsite,
+          formStartedAt,
+        }),
+      });
 
-    setTimeout(() => {
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data?.error || "Failed to send message.");
+      }
+
       setStatus("success");
       setFormState(initialFormState);
-    }, 1500);
+      setCompanyWebsite("");
+    } catch (error) {
+      console.error("Contact form error:", error);
+
+      setStatus("error");
+    }
   };
 
   if (status === "success") {
@@ -241,6 +260,17 @@ export function ContactForm({ translations }: ContactFormProps) {
         />
       </motion.div>
 
+      <input
+        type="text"
+        name="companyWebsite"
+        value={companyWebsite}
+        onChange={(e) => setCompanyWebsite(e.target.value)}
+        tabIndex={-1}
+        autoComplete="new-password"
+        className="absolute left-[-9999px] h-0 w-0 opacity-0"
+        aria-hidden="true"
+      />
+
       {/* Submit */}
       <motion.div variants={fieldVariants} className="pt-2">
         <button
@@ -261,6 +291,22 @@ export function ContactForm({ translations }: ContactFormProps) {
             </>
           )}
         </button>
+
+        {status === "error" && (
+          <motion.p
+            initial={{
+              opacity: 0,
+              y: -5,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            className="mt-4 text-xs font-medium text-red-500"
+          >
+            {translations.error}
+          </motion.p>
+        )}
       </motion.div>
     </motion.form>
   );

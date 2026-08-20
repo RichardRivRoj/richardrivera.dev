@@ -372,7 +372,7 @@
   "contact": {
     "title": "Ponte en Contacto",
     "subtitle": "Contacto",
-    "description": "¿Te interesa colaborar, contratarme, desarrollar proyectos de investigación académica o realizar consultorías educativas? Envíame un mensaje.",
+    "description": "¿Buscas un desarrollador full stack para tu equipo o proyecto? Puedo ayudarte con desarrollo de software, arquitectura web, integración de APIs, frontend y backend. También disponible para consultorías educativas. Envíame un mensaje.",
 
     "info": {
       "label": "01 — Contacto",
@@ -411,6 +411,7 @@
 
       "submit": "Enviar Mensaje",
       "sending": "Enviando mensaje...",
+      "error": "Algo salió mal. Por favor, inténtalo de nuevo más tarde.",
 
       "success": {
         "title": "¡Mensaje Enviado!",
@@ -418,6 +419,43 @@
         "another": "Enviar otro mensaje"
       }
     }
+  },
+  "footer": {
+  "brand": {
+    "statementStart": "Construyamos algo",
+    "statementHighlight": "significativo",
+    "statementEnd": ".",
+    "description": "Ingeniero de Sistemas y Desarrollador Full Stack"
+  },
+
+  "availability": "Disponible para oportunidades",
+
+  "navigation": {
+    "title": "Explorar",
+    "about": "Sobre mí",
+    "experience": "Experiencia",
+    "technology": "Tecnología",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+
+  "connect": {
+    "title": "Conectar",
+    "email": "Correo electrónico",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "instagram": "Instagram"
+  },
+
+  "stack": {
+    "title": "Construido con"
+  },
+
+  "bottom": {
+    "copyright": "Todos los derechos reservados.",
+    "builtWith": "Diseñado y desarrollado con Next.js, Tailwind CSS y Motion.",
+    "backToTop": "Volver arriba"
   }
+}
 
 }
