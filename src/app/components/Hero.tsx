@@ -210,7 +210,7 @@ export function Hero() {
               variants={itemVariants}
               className="max-w-xl font-sans text-lg leading-relaxed font-light text-slate-500 dark:text-slate-400"
             >
-              <span className="text-[16px] font-semibold">"{tagline}"</span>
+              <span className="text-[13px] font-semibold md:text-[16px]">"{tagline}"</span>
               <br />
               {description}
             </motion.p>

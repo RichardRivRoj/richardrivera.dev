@@ -411,6 +411,7 @@
 
       "submit": "Enviar Mensaje",
       "sending": "Enviando mensaje...",
+      "error": "Algo salió mal. Por favor, inténtalo de nuevo más tarde.",
 
       "success": {
         "title": "¡Mensaje Enviado!",

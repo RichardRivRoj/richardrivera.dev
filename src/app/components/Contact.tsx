@@ -73,6 +73,7 @@ export function Contact() {
 
     submit: t<string>("contact.form.submit"),
     sending: t<string>("contact.form.sending"),
+    error: t<string>("contact.form.error"),
 
     success: {
       title: t<string>("contact.form.success.title"),

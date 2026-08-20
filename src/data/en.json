@@ -413,6 +413,7 @@
 
       "submit": "Send Message",
       "sending": "Sending message...",
+      "error": "Something went wrong. Please try again later.",
 
       "success": {
         "title": "Message Sent!",
